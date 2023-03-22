@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-red, header {
+  background-color: black!important;
+}
+
+nav {
+  margin-left: 30px;
+}
+
+#main-container {
+  padding: 16px;
+}
+
+html, body { height: 100%; }
+
+.carousel-caption {
+  top: 27rem;
+  bottom: auto;
+  h3 {
+    font-family: "Homemade Apple", cursive;
+    font-size: 40px;
+    text-shadow: black 3px 3px 3px;
+  }
+}
+
+.nav-icon {
+  color: white;
+  font-size: 120%;
+  margin-left: 5px;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
