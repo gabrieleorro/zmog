@@ -22,11 +22,11 @@ export class AppComponent {
   images = [
     {
       id: 1,
-      label: 'Prodotto 1'
+      label: 'Prodotto finale'
     },
     {
       id: 2,
-      label: 'Prodotto 2'
+      label: 'Fase di design'
     },
   ];
 
