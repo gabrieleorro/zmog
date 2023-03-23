@@ -1,13 +1,17 @@
 .container-titolo {
   h2 {
     font-size: 35px;
-    // font-family: 'Homemade Apple', cursive;
     font-family: 'PT Mono', monospace;
     color: purple;
+    text-align: center;
+    margin-top: 5px;
   };
   .paragrafo {
-    color: green;
-    font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    font-size: 25px;
+    text-align: justify;
+    line-height: normal;
   }
 }
 
@@ -19,9 +23,6 @@
   // margin-right: 5px;
 }
 
-.icona-zmog
-{
-  width: 80px;
-  height: 50px;
-  margin-right: 10px;
+.footer {
+  position: relative;
 }

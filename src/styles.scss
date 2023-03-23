@@ -17,6 +17,7 @@ nav {
 
 #main-container {
   padding: 16px;
+  text-align: center;
 }
 
 html, body { height: 100%; }
@@ -31,10 +32,29 @@ html, body { height: 100%; }
   }
 }
 
+.icona-zmog
+{
+  width: 80px;
+  height: 50px;
+  margin-right: 10px;
+}
+
 .nav-icon {
   color: white;
   font-size: 120%;
   margin-left: 5px;
+}
+
+.settori {
+  // max-width: 50px;
+  background-color: black;
+  margin: auto;
+  // margin-top: 70px;
+  // margin-bottom: 2px;
+  border-radius: 15px;
+  position: static;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* Importing Bootstrap SCSS file. */

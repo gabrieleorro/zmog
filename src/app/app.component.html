@@ -1,56 +1,37 @@
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-red">
-    <div class="container-fluid">
-      <img src="../assets/images/icona-zmog-wb.png" class="icona-zmog align-self-center">
-      <!-- <a class="navbar-brand" href="#">Zmog</a> -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <fa-icon [icon]="faHotel" class="align-self-center nav-icon"></fa-icon>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <fa-icon [icon]="faShirt" class="align-self-center nav-icon"></fa-icon>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Prodotti</a>
-          </li>
-          <fa-icon [icon]="faCartArrowDown" class="align-self-center nav-icon"></fa-icon>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Carrello</a>
-          </li>
-          <fa-icon [icon]="faAddressCard" class="align-self-center nav-icon"></fa-icon>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contatti</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+<app-header></app-header>
 
-<!-- Direttive strutturali -->
-<ngb-carousel *ngIf="images.length > 1">
-  <ng-template ngbSlide *ngFor="let image of images">
-    <div class="picsum-img-wrapper">
-      <img [src]="percorso + image.id + '.png'" [alt]="image.label" />
-    </div>
-    <div class="carousel-caption">
-      <h3>{{image.label}}</h3>
-    </div>
-  </ng-template>
-</ngb-carousel>
+<app-carousel></app-carousel>
 
-<div *ngIf="images.length == 1" class="single-image">
-  <img [src]="percorso + images[0].id + '.png'" [alt]="images[0].label" />
+<div class="container-fluid">
+  <div class="row justify-content-around">
+    <div class="container-titolo col-4 settori">
+      <h2>COSA È Zmog</h2>
+      <p class="paragrafo m-2">Zmog è un brand d'abbigliamento dallo stile moderno e sofisticato, che si ispira alle tendenze della moda contemporanea per creare capi unici e originali. La filosofia del brand è quella di offrire abiti di alta qualità, realizzati con tessuti pregiati e attenzione ai dettagli, per una vestibilità impeccabile e un look distintivo. I capi Zmog sono progettati per un pubblico cosmopolita, che ama vestire con stile ed eleganza, ma con un tocco di originalità e personalità. Il brand si distingue per la sua attenzione all'ambiente e alla sostenibilità, utilizzando materiali ecologici e tecniche di produzione responsabili. Zmog è una scelta ideale per chi cerca un brand di abbigliamento di alta qualità e dallo stile unico e distintivo.Zmog è un brand d'abbigliamento dallo stile moderno e sofisticato, che si ispira alle tendenze della moda contemporanea per creare capi unici e originali. La filosofia del brand è quella di offrire abiti di alta qualità, realizzati con tessuti pregiati e attenzione ai dettagli, per una vestibilità impeccabile e un look distintivo. I capi Zmog sono progettati per un pubblico cosmopolita, che ama vestire con stile ed eleganza, ma con un tocco di originalità e personalità. Il brand si distingue per la sua attenzione all'ambiente e alla sostenibilità, utilizzando materiali ecologici e tecniche di produzione responsabili. Zmog è una scelta ideale per chi cerca un brand di abbigliamento di alta qualità e dallo stile unico e distintivo.</p>
+    </div>
+
+    <div class="container-titolo col-4 settori">
+      <h2>QUI ANDRANNO I PRODOTTI</h2>
+      <p>
+        <img src="../assets/images/prodotto-3.png" class="img-fluid">
+      </p>
+    </div>
+  </div>
 </div>
 
-<div id="main-container">
-  <div class="container-titolo">
-    <h2>QUI ANDRANNO I PRODOTTI</h2>
-    <p class="paragrafo">Ecco un testo dentro al paragrafo</p>
-  </div>
+<div class="container footer">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">© 2023 Zmog, Inc</p>
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="../assets/images/icona_zmog.png" class="icona-zmog">
+    </a>
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prodotti</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+  </footer>
 </div>
 
 <router-outlet></router-outlet>
