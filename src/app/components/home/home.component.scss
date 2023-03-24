@@ -1,0 +1,50 @@
+.container-titolo {
+  h2 {
+    font-size: 35px;
+    font-family: 'Bebas Neue', cursive;
+    color: purple;
+    text-align: center;
+    margin-top: 5px;
+  };
+  .paragrafo {
+    font-family: 'Rajdhani', sans-serif;
+    color: black;
+    font-size: 25px;
+    text-align: justify;
+    line-height: normal;
+  }
+}
+
+.settori {
+  // max-width: 50px;
+  background-color: white;
+  margin: auto;
+  // margin-top: 70px;
+  // margin-bottom: 2px;
+  border-radius: 15px;
+  position: static;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.col {
+  width: calc((100% / 3) - 10px);
+  margin-bottom: 20px;
+}
+
+.col img {
+  width: 100%;
+  height: auto;
+}
