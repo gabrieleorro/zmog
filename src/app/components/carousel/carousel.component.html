@@ -1,6 +1,6 @@
 <!-- Direttive strutturali -->
 <div class="bordo-carousel">
-  <ngb-carousel *ngIf="images.length > 1; else noSlide" [interval]="10000">
+  <ngb-carousel *ngIf="images.length > 1; else noSlide" [interval]="5000">
     <ng-template ngbSlide *ngFor="let image of images; let i = index">
       <div class="picsum-img-wrapper">
         <img [src]="percorso + image.id + '.png'" [alt]="image.label" />

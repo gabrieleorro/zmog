@@ -10,11 +10,15 @@ export class CarouselComponent {
   images = [
     {
       id: 1,
-      label: 'Prodotto finale'
+      label: 'DESIGN STAGE'
     },
     {
       id: 2,
-      label: 'Fase design'
+      label: 'DESIGN STAGE'
+    },
+    {
+      id: 3,
+      label: 'DESIGN STAGE'
     },
   ];
 

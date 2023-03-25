@@ -1,32 +1,3 @@
-.container-titolo {
-  h2 {
-    font-size: 35px;
-    font-family: 'Bebas Neue', cursive;
-    color: purple;
-    text-align: center;
-    margin-top: 5px;
-  };
-  .paragrafo {
-    font-family: 'Rajdhani', sans-serif;
-    color: black;
-    font-size: 25px;
-    text-align: justify;
-    line-height: normal;
-  }
-}
-
-.settori {
-  // max-width: 50px;
-  background-color: white;
-  margin: auto;
-  // margin-top: 70px;
-  // margin-bottom: 2px;
-  border-radius: 15px;
-  position: static;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +15,94 @@
   margin-bottom: 20px;
 }
 
+.col p {
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 25px;
+}
+
 .col img {
   width: 100%;
   height: auto;
+  cursor: pointer;
+}
+
+.brand-description {
+  background-color: #f8f8f8;
+  // background-color: #a98f73;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.brand-description h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #5307aa;
+  text-align: center;
+}
+
+.brand-description p {
+  margin-bottom: 10px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 21px;
+  line-height: 1.5;
+  color: #333;
+  text-align: justify;
+}
+
+/* Stile generale della sezione "Prodotti in evidenza" */
+.container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+/* Stile delle card */
+.card {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  // background-color: #0069d9;
+  background-color: #5307aa;
+  // border-color: #0062cc;
+  border-color: #5307aa;
+}
+
+.card-body h5, p, a {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
 }
