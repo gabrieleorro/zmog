@@ -4,5 +4,6 @@ export interface Product {
   description: string;
   image: string;
   price: number;
+  sells: number,
   published: boolean;
 }

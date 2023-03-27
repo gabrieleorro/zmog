@@ -57,10 +57,10 @@
 .container {
   margin-top: 50px;
   text-align: center;
-}
 
-h2 {
-  margin-bottom: 30px;
+  h2 {
+    margin-bottom: 30px;
+  }
 }
 
 /* Stile delle card */
@@ -69,24 +69,29 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+
+  .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card-title {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .card-text {
+    margin-bottom: 10px;
+  }
+
+  .card-body h5, p, a {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+  }
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.card-img-top {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.card-title {
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-
-.card-text {
-  margin-bottom: 10px;
 }
 
 .btn-primary {
@@ -100,9 +105,4 @@ h2 {
   background-color: #5307aa;
   // border-color: #0062cc;
   border-color: #5307aa;
-}
-
-.card-body h5, p, a {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 20px;
 }

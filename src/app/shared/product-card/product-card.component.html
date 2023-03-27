@@ -1,0 +1,11 @@
+<div class="card-container" *ngFor="let product of products">
+  <div class="card">
+    <div class="card-image" [ngStyle]="{'background-image': 'url(' + product.image + ')'}"></div>
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <h5 class="card-price"> € {{product.price}}</h5>
+      <a href="#" class="btn btn-primary">Visualizza</a>
+    </div>
+  </div>
+</div>
