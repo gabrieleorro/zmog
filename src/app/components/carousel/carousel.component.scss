@@ -1,3 +1,5 @@
+@import "../../../styles/colors.scss";
+
 .bordo-carousel {
   border-radius: 15px;
 }
@@ -8,7 +10,7 @@
   h3 {
     font-family: 'Bebas Neue', cursive;
     font-size: 50px;
-    color: #710ce6;
-    text-shadow: black 1px 3px 3px;
+    color: $electric-indigo;
+    text-shadow: $nero 1px 3px 3px;
   }
 }

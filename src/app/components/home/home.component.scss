@@ -1,3 +1,5 @@
+@import "../../../styles/colors.scss";
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -28,9 +30,9 @@
 }
 
 .brand-description {
-  background-color: #f8f8f8;
+  background-color: $sale-marino;
   // background-color: #a98f73;
-  border: 2px solid #ccc;
+  border: 2px solid $silver;
   border-radius: 5px;
   padding: 20px;
   margin: 20px;
@@ -40,7 +42,7 @@
   font-family: 'Bebas Neue', cursive;
   font-size: 24px;
   margin-bottom: 10px;
-  color: #5307aa;
+  color: $viola;
   text-align: center;
 }
 
@@ -49,7 +51,7 @@
   font-family: 'Rajdhani', sans-serif;
   font-size: 21px;
   line-height: 1.5;
-  color: #333;
+  color: $jet;
   text-align: justify;
 }
 
@@ -95,14 +97,12 @@
 }
 
 .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: $azure;
+  border-color: $azure;
   margin-top: 10px;
 }
 
 .btn-primary:hover {
-  // background-color: #0069d9;
-  background-color: #5307aa;
-  // border-color: #0062cc;
-  border-color: #5307aa;
+  background-color: $viola;
+  border-color: $viola;
 }

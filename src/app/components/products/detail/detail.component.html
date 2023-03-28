@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 container-lato-sx">
+      <div class="container-prodotto-image">
+        <img src="{{prodotto.image}}">
+      </div>
+    </div>
+    <!-- <div class="col"></div> -->
+    <div class="col-6">
+      <div class="prodotto-title">
+        <h2>{{prodotto.title}}</h2>
+      </div>
+      <div class="prodotto-price">
+        <p><br><br>€ {{prodotto.price}},00</p>
+      </div>
+      <hr class="not-in-quickbuy">
+      <div class="frase-selettore">
+        <img src="https://www.svgrepo.com/show/113293/clothes-hanger.svg" class="icona-stampella">
+        <h1>Qual è la mia taglia?</h1>
+      </div>
+      <label class="testo-label">Taglia</label>
+      <div class="taglie">
+        <button class="tasto">XS</button>
+        <button class="tasto">S</button>
+        <button class="tasto">M</button>
+        <button class="tasto">L</button>
+        <button class="tasto">XL</button>
+      </div>
+      <label class="testo-label">Quantità</label>
+      <div class="selettore-quantita">
+        <button (click)="decrementa()">-</button>
+        <input type="number" [(ngModel)]="quantita" min="1" />
+        <button (click)="incrementa()">+</button>
+      </div>
+      <button class="button-carrello">Aggiungi al carrello</button>
+      <div class="prodotto-description">
+        <p>{{prodotto.description}}</p>
+      </div>
+      <hr class="not-in-quickbuy">
+      <div class="image-taglie">
+        <img src="https://cdn.shopify.com/s/files/1/0608/1806/3572/files/Brown_Minimalist_Fashion_Size_Chart_Instagram_Post_800_x_566_px_480x480.jpg?v=1653385880">
+      </div>
+    </div>
+  </div>
+</div>
+

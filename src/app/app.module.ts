@@ -13,6 +13,9 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ProductCardComponent } from './shared/product-card/product-card.component';
+import { DetailComponent } from './components/products/detail/detail.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { ProductCardComponent } from './shared/product-card/product-card.compone
     ProductsComponent,
     HomeComponent,
     FooterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    DetailComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { ProductCardComponent } from './shared/product-card/product-card.compone
     BrowserAnimationsModule,
     MaterialExampleModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,7 +10,12 @@ export class ProductService {
 
   constructor() { }
 
-  getProduct(): Observable<Product[]> {
+  getProducts(): Observable<Product[]> {
     return of (PRODUCTS);
+  }
+
+  getProduct(id: number): Observable<Product> {
+    const product = PRODUCTS.find(prodotto => prodotto._id === id);
+    return of (product);
   }
 }

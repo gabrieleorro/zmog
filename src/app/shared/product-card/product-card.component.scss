@@ -1,3 +1,5 @@
+@import "../../../styles/colors.scss";
+
 .card-container {
   display: block;
   float: left;
@@ -24,7 +26,7 @@
     .card-title {
       font-family: 'Bebas Neue', cursive;
       font-size: 23px;
-      color: #5307aa;
+      color: $viola;
       margin: 2px;
     }
 
@@ -36,11 +38,11 @@
     .card-price {
       font-family: 'Bebas Neue', cursive;
       font-size: 23px;
-      color: #5307aa;
+      color: $viola;
     }
 
     a.btn.btn-primary {
-      background: #5307aa;
+      background: $viola;
       border: none;
       margin: auto;
       padding: 8px 35px;

@@ -1,6 +1,8 @@
+@import "../../../styles/colors.scss";
+
 .container-footer {
   /* position: relative; */
-  background-color: rgb(179, 176, 176);
+  background-color: $silver;
   /* display: block; */
   float: left;
   width: 100%;

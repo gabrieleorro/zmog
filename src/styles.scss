@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "../src/styles/colors.scss";
 
 body {
   margin: 0;
@@ -8,7 +9,7 @@ body {
 }
 
 .bg-red, header {
-  background-color: black!important;
+  background-color: $nero!important;
 }
 
 nav {
@@ -25,7 +26,7 @@ html, body { height: 100%; }
 h2 {
   font-family: 'Bebas Neue', cursive!important;
   font-size: 24px!important;
-  color: #5307aa!important;
+  color: $viola!important;
 }
 
 .icona-zmog
@@ -36,7 +37,7 @@ h2 {
 }
 
 .nav-icon {
-  color: white;
+  color: $bianco;
   font-size: 120%;
   margin-left: 5px;
 }
@@ -60,6 +61,11 @@ h2 {
   font-family: 'Bebas Neue', cursive;
   font-size: 15px;
   letter-spacing: 2px;
+}
+
+@font-face {
+  font-family: 'NeueHaasDisplay';
+  src: url('./assets/fonts/NeueHaasDisplayBold.ttf') format('truetype');
 }
 
 /* Importing Bootstrap SCSS file. */
