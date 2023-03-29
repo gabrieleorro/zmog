@@ -4,8 +4,8 @@
     <div class="card-body">
       <h5 class="card-title">{{product.title}}</h5>
       <p class="card-text">{{product.description}}</p>
-      <h5 class="card-price"> € {{product.price}}</h5>
-      <a class="btn btn-primary" routerLink="dettaglio/{{product.title}}/{{product._id}}">Visualizza</a>
+      <h5 class="card-price">{{product.price | currency: 'EUR'}}</h5>
+      <a class="btn btn-primary" routerLink="/prodotti/dettaglio/{{product.title}}/{{product._id}}">Visualizza</a>
     </div>
   </div>
 </div>

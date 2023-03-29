@@ -41,34 +41,15 @@
 
 <section class="container">
   <h2>Prodotti in evidenza</h2>
+  <!-- <app-product-card [products]="prodotti"></app-product-card> -->
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let prodotto of prodotti">
       <div class="card">
-        <img src="https://cdn.shopify.com/s/files/1/0608/1806/3572/products/nero_fac8ec39-0837-40ce-b460-c9aa577273c3_720x.jpg?v=1648637114" class="card-img-top" alt="FELPA HOODIE DELTANOVE CHILDISH">
+        <img src="{{prodotto.image}}" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">FELPA HOODIE DELTANOVE CHILDISH</h5>
+          <h5 class="card-title">{{prodotto.title}}</h5>
           <p class="card-text">Solo 35 pz in stock! AFFRETTATI</p>
-          <a href="#" class="btn btn-primary">Acquista ora</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img src="https://cdn.shopify.com/s/files/1/0608/1806/3572/products/004_binaco_720x.jpg?v=1636239609" class="card-img-top" alt="T-SHIRT THEGRADO ICON NBA">
-        <div class="card-body">
-          <h5 class="card-title">T-SHIRT THEGRADO ICON NBA</h5>
-          <p class="card-text">Solo 25 pz in stock! AFFRETTATI</p>
-          <a href="#" class="btn btn-primary">Acquista ora</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img src="https://cdn.shopify.com/s/files/1/0608/1806/3572/products/NERO_720x.jpg?v=1655141468" class="card-img-top" alt="FELPA HOODIE DELTANOVE BULLET">
-        <div class="card-body">
-          <h5 class="card-title">FELPA HOODIE DELTANOVE BULLET</h5>
-          <p class="card-text">Solo 35 pz in stock! AFFRETTATI</p>
-          <a href="#" class="btn btn-primary">Acquista ora</a>
+          <a routerLink="/prodotti/dettaglio/{{prodotto.title}}/{{prodotto._id}}" class="btn btn-primary">Acquista ora</a>
         </div>
       </div>
     </div>

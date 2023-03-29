@@ -11,7 +11,7 @@
         <h2>{{prodotto.title}}</h2>
       </div>
       <div class="prodotto-price">
-        <p><br><br>€ {{prodotto.price}},00</p>
+        <p><br><br>{{prodotto.price | currency:'EUR'}}</p>
       </div>
       <hr class="not-in-quickbuy">
       <div class="frase-selettore">
