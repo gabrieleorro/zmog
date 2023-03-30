@@ -57,6 +57,13 @@ h2 {
   background-size: 100% 100%;
 }
 
+.btn-primary {
+  background-color: $bianco!important;
+  color: $nero!important;
+  font-weight: 700!important;
+  border: none!important;
+}
+
 .nav-item {
   font-family: 'Bebas Neue', cursive;
   font-size: 15px;
@@ -66,6 +73,13 @@ h2 {
 @font-face {
   font-family: 'NeueHaasDisplay';
   src: url('./assets/fonts/NeueHaasDisplayBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SF Mono Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/SFMonoRegular.woff') format('woff');
 }
 
 /* Importing Bootstrap SCSS file. */

@@ -15,7 +15,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ProductCardComponent } from './shared/product-card/product-card.component';
 import { DetailComponent } from './components/products/detail/detail.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ProductCardComponent,
     DetailComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     MaterialExampleModule,
     FontAwesomeModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

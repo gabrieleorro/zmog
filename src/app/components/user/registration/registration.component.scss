@@ -1,0 +1,105 @@
+.container-form {
+  input.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+  input.ng-valid.ng-touched {
+    border: 2px solid green;
+  }
+
+  .check {
+    height: 50px;
+    width: 70%;
+    flex-direction: column;
+
+    p {
+      margin-top: 4px;
+    }
+  }
+}
+
+
+
+p.help.is-danger {
+  margin-top: 4px;
+  color: rgb(209, 30, 30);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'SF Mono Regular';
+  font-size: 30px;
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 3.5rem !important;
+}
+
+h6 {
+  font-family: "NeueHaasDisplay", sans-serif;
+  font-size: 18px;
+}
+
+label {
+  font-family: "NeueHaasDisplay", sans-serif;
+  font-size: 18px;
+}
+
+.box-gender {
+  width: 70%;
+}
+
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/27/22/05/necktie-1284463_960_720.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-indigo {
+  background-color: #000000;
+}
+
+@media (min-width: 992px) {
+  .card-registration-2 .bg-indigo {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .card-registration-2 .bg-indigo {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+.h-custom[_ngcontent-ldx-c29] {
+  height: 135vh !important;
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0px;
+  font-family: "NeueHaasDisplay", sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+}
