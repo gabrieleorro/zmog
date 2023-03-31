@@ -17,6 +17,11 @@ import { DetailComponent } from './components/products/detail/detail.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
+import { RatingModule } from 'primeng/rating';
+import { ImageModule } from 'primeng/image';
+import { MessagesModule } from 'primeng/messages';
 
 
 @NgModule({
@@ -40,7 +45,12 @@ import { RegistrationComponent } from './components/user/registration/registrati
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PasswordModule,
+    DividerModule,
+    RatingModule,
+    ImageModule,
+    MessagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

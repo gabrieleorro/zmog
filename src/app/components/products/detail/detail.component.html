@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-6 container-lato-sx">
       <div class="container-prodotto-image">
-        <img src="{{prodotto.image}}">
+        <p-image src="{{prodotto.image}}" alt="Image" [preview]="true"></p-image>
       </div>
     </div>
     <!-- <div class="col"></div> -->
@@ -33,6 +33,23 @@
         <button (click)="incrementa()">+</button>
       </div>
       <button class="button-carrello">Aggiungi al carrello</button>
+
+      <div class="card-feedback flex justify-content-center">
+        <label class="testo-feedback">Se hai acquistato il prodotto, lascia un feedback:</label>
+        <p-rating [(ngModel)]="value" [stars]="5">
+            <ng-template pTemplate="cancel">
+                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png" width="25px" height="25px" />
+            </ng-template>
+            <ng-template pTemplate="onicon">
+                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png" width="25px" height="25px" />
+            </ng-template>
+            <ng-template pTemplate="officon">
+                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px" height="25px" />
+            </ng-template>
+        </p-rating>
+      </div>
+
+
       <div class="prodotto-description">
         <p>{{prodotto.description}}</p>
       </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
@@ -14,11 +15,22 @@ export class DetailComponent implements OnInit {
 
   quantita: number = 1;
 
+  value: number;
+  stars: number;
+
+  form = new FormGroup({
+    feedback: new FormControl(''),
+  })
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private productService: ProductService
   ) {}
+
+  onSubmit(){
+    console.log(this.form.value);
+  }
 
   incrementa() {
     this.quantita++;
