@@ -19,7 +19,7 @@ export class RegistrationComponent {
       weak: 'Debole',
       medium: 'Media',
       strong: 'Forte',
-      passwordPrompt: 'inserisci una password',
+      passwordPrompt: 'Livello di sicurezza',
     });
   }
 
