@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidator } from '../customValidator';
 import { PrimeNGConfig } from 'primeng/api';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +14,7 @@ export class RegistrationComponent {
 
   countries: any[];
 
-  constructor(private config: PrimeNGConfig) {}
+  constructor(private config: PrimeNGConfig, private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     this.config.setTranslation({
@@ -44,7 +46,14 @@ export class RegistrationComponent {
   );
 
   onSubmit() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
+    const user = {
+      name: this.form.value.name,
+      email: this.form.value.email
+    }
+
+    this.userService.datiUtente.next(user);
+    this.router.navigate(['home']);
   }
 
 }

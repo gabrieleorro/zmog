@@ -60,6 +60,21 @@
   </div>
 </section>
 
+<ng-template [ngIf]="name">
+  <div id="container-utente">
+    <div id="dati-utente">
+      <h2>Grazie {{name}} per esserti registrato, ecco i tuoi dati:</h2>
+      <hr class="bordino-popup">
+      <ul>
+        <li>Nome: {{name}}</li>
+        <li>Email: {{email}}</li>
+      </ul>
+      <hr class="bordino-popup">
+      <button class="btn btn-primary btn-lg" (click)="closeModal()">Chiudi</button>
+    </div>
+  </div>
+</ng-template>
+
 
 
 

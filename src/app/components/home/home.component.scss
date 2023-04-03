@@ -113,3 +113,55 @@
   background-color: $viola;
   border-color: $viola;
 }
+
+div#container-utente {
+  background: #000000b0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  z-index: 10;
+
+  div#dati-utente {
+    background: white;
+    width: 60%;
+    border: 5px solid $viola;
+    border-radius: 30px;
+    padding: 16px;
+
+    h2 {
+      font-size: 30px!important;
+      text-align: center;
+    }
+
+    .bordino-popup {
+      border: none;
+      width: 100%;
+      color: transparent;
+      border-bottom: 1px solid $viola;
+      height: 1px;
+      margin: 20px 0;
+    }
+
+    ul {
+      height: 90px;
+      margin-top: 33px;
+      font-size: 18px;
+      text-align: center;
+
+      li {
+        line-height: 40px;
+      }
+    }
+
+    button.btn.btn-primary.btn-lg {
+      width: 50%;
+      margin-left: 25%;
+      background: $viola;
+    }
+  }
+}
