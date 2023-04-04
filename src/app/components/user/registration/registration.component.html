@@ -198,7 +198,7 @@
                         <div class="check">
                           <input class="form-check-input me-3" type="checkbox" name="terms" formControlName="terms"/>
                           <label class="form-check-label text-white" for="terms">
-                            Dichiaro di accettare i <a href="#!" class="text-white"><u>Terms and Conditions</u></a> del tuo sito.
+                            Dichiaro di accettare i <a (click)="open(modaleServizi)" class="text-white"><u>Terms and Conditions</u></a> del tuo sito.
                           </label>
                           <div class="errors">
                             <p class="help is-danger" *ngIf="!form.get('terms').valid && form.get('terms').touched">Per proseguire è necessario accettare</p>
@@ -219,3 +219,27 @@
     </div>
   </section>
 </div>
+
+<ng-template #modaleServizi let-modal>
+  <div class="modal-header">
+    <h3>Termini di Servizio</h3>
+    <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <p>Accedendo al nostro sito web, accetti automaticamente di rispettare i seguenti termini e condizioni.
+      Tutti i contenuti presenti sul nostro sito web, inclusi testi, immagini, video e grafiche, sono di proprietà esclusiva della nostra azienda e sono protetti da copyright.
+      È vietato l'uso non autorizzato dei nostri contenuti, compresa la riproduzione, la distribuzione o la modifica senza il nostro consenso scritto.
+      Ci riserviamo il diritto di apportare modifiche ai nostri termini e condizioni in qualsiasi momento e senza preavviso.
+      Ti invitiamo a visitare questa pagina regolarmente per verificare eventuali modifiche.
+      Il nostro sito web può contenere collegamenti ad altri siti web di terze parti. Non siamo responsabili dei contenuti o della privacy policy di questi siti.
+      L'uso dei nostri servizi è a tuo rischio e pericolo. Non garantiamo che il sito web sarà sempre disponibile o privo di errori.
+      Non siamo responsabili per eventuali perdite o danni derivanti dall'uso del nostro sito web o dei nostri servizi.
+      L'utente si impegna a non utilizzare il nostro sito web per scopi illegali o per violare i diritti di terzi.
+      Qualsiasi controversia relativa ai nostri termini e condizioni o all'uso del nostro sito web sarà risolta in conformità con le leggi dello stato di nostra residenza.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-modal" (click)="modal.dismiss()">CHIUDI</button>
+    <button type="button" class="btn btn-modal" (click)="modal.close()" ngbAutoFocus>AZIONE</button>
+  </div>
+</ng-template>

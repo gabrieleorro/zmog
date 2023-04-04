@@ -4,6 +4,7 @@ import { CustomValidator } from '../customValidator';
 import { PrimeNGConfig } from 'primeng/api';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +15,12 @@ export class RegistrationComponent {
 
   countries: any[];
 
-  constructor(private config: PrimeNGConfig, private userService: UserService, private router: Router) {}
+  constructor(
+    private config: PrimeNGConfig,
+    private userService: UserService,
+    private router: Router,
+    private modalService: NgbModal,
+  ) {}
 
   ngOnInit() {
     this.config.setTranslation({
@@ -46,7 +52,6 @@ export class RegistrationComponent {
   );
 
   onSubmit() {
-    // console.log(this.form.value);
     const user = {
       name: this.form.value.name,
       email: this.form.value.email
@@ -54,6 +59,15 @@ export class RegistrationComponent {
 
     this.userService.datiUtente.next(user);
     this.router.navigate(['home']);
+  }
+
+  open(content: any, titolo?: string) {
+    let title = titolo;
+    this.modalService.open(content, { ariaLabelledBy: 'modale servizi', size: 'md', centered: true}).result.then((res) => {
+      console.log('Azione da eseguire')
+    }).catch((res) => {
+      console.log('Nessuna azione da eseguire')
+    });
   }
 
 }

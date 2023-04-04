@@ -134,3 +134,19 @@ input, button, select, optgroup, textarea {
 .lato-dx {
   background-color: $nero;
 }
+
+.btn-close {
+  width: 4em;
+  opacity: 1.5;
+}
+
+.modal-footer {
+
+  .btn-modal {
+    background-color: $viola;
+    color: $bianco;
+    font-weight: 700;
+    border: 2px solid $nero;
+    margin-left: 0.5rem;
+  }
+}

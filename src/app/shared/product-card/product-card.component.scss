@@ -1,5 +1,24 @@
 @import "../../../styles/colors.scss";
 
+.selettore-tipo {
+  margin-top: -15px;
+  margin-bottom: 15px;
+
+  .bottone {
+    display: inline-block;
+    width: 150px;
+    height: 46px;
+    margin: 5px;
+    font-family: 'NeueHaasDisplay', sans-serif;
+    font-size: 16px;
+    color: $selettore-testo;
+    background-color: $bianco;
+    border: 1px solid $selettore-testo;
+    margin: 5px;
+    cursor: pointer;
+  }
+}
+
 .card-container {
   display: block;
   float: left;

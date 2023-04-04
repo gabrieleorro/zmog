@@ -1,11 +1,25 @@
-<div class="card-container" *ngFor="let product of products">
-  <div class="card">
-    <div class="card-image" [ngStyle]="{'background-image': 'url(' + product.image + ')'}"></div>
-    <div class="card-body">
-      <h5 class="card-title">{{product.title}}</h5>
-      <p class="card-text">{{product.description| slice: 0:50}}...</p>
-      <h5 class="card-price">{{product.price | currency: 'EUR'}}</h5>
-      <a class="btn btn-primary" routerLink="/prodotti/dettaglio/{{product.title}}/{{product._id}}">Visualizza</a>
+<div class="selettore-tipo">
+  <button class="bottone" (click)="getProdotti('all')">ALL</button>
+  <button class="bottone" (click)="getProdotti('felpa')">FELPE</button>
+  <button class="bottone" (click)="getProdotti('shirt')">T-SHIRT</button>
+</div>
+<h2>I NOSTRI PRODOTTI</h2>
+<div class="container-cards">
+  <div class="container-pagination" *ngIf="pag != 'home'">
+    <div>
+      <strong>{{prodottiPerPagina}}</strong> prodotti su un totale di <strong>{{prodottiTotali}}</strong> prodotti, pagina corrente: <strong>{{page}}</strong>
+    </div>
+    <p-paginator (onPageChange)="paginate($event)" [rows]="prodottiPerPagina" [totalRecords]="prodottiTotali" (rowsPerPageOptionsChange)="prodottiPerPagina"></p-paginator>
+  </div>
+  <div class="card-container" *ngFor="let product of products | slice: (page * prodottiPerPagina) - prodottiPerPagina : page * prodottiPerPagina">
+    <div class="card">
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + product.image + ')'}"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.description| slice: 0:50}}...</p>
+        <h5 class="card-price">{{product.price | currency: 'EUR'}}</h5>
+        <a class="btn btn-primary" routerLink="/prodotti/dettaglio/{{product.title}}/{{product._id}}">Visualizza</a>
+      </div>
     </div>
   </div>
 </div>
