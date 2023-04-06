@@ -1,11 +1,13 @@
-<div class="selettore-tipo">
-  <button class="bottone" (click)="getProdotti('all')">ALL</button>
-  <button class="bottone" (click)="getProdotti('felpa')">FELPE</button>
-  <button class="bottone" (click)="getProdotti('t-shirt')">T-SHIRT</button>
-  <button class="bottone" (click)="getProdotti('scarpe')">SNEAKERS</button>
-  <button class="bottone" (click)="getProdotti('gadget')">GADGETS</button>
+<div *ngIf="pag != 'home'">
+  <div class="selettore-tipo">
+    <button class="bottone" (click)="getProdotti('all')">ALL</button>
+    <button class="bottone" (click)="getProdotti('felpa')">FELPE</button>
+    <button class="bottone" (click)="getProdotti('t-shirt')">T-SHIRT</button>
+    <button class="bottone" (click)="getProdotti('scarpe')">SNEAKERS</button>
+    <button class="bottone" (click)="getProdotti('gadget')">GADGETS</button>
+  </div>
+  <h2>I NOSTRI PRODOTTI</h2>
 </div>
-<h2>I NOSTRI PRODOTTI</h2>
 <div class="container-cards">
   <div class="container-pagination" *ngIf="pag != 'home'">
     <div>
@@ -20,7 +22,8 @@
         <h5 class="card-title">{{product.title}}</h5>
         <p class="card-text">{{product.description| slice: 0:50}}...</p>
         <h5 class="card-price">{{product.price | currency: 'EUR'}}</h5>
-        <a class="btn btn-primary" routerLink="/prodotti/dettaglio/{{product.title}}/{{product._id}}">Visualizza</a>
+        <a class="btn btn-primary" routerLink="dettaglio/{{product.title}}/{{product._id}}" *ngIf="!pag">Visualizza</a>
+        <a class="btn btn-primary" routerLink="/prodotti/dettaglio/{{product.title}}/{{product._id}}" *ngIf="pag">Dettaglio</a>
       </div>
     </div>
   </div>

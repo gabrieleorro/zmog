@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   messages1: Message[];
   messages2: Message[];
 
+  utenteRegistrato: any;
   name: string;
   email: string;
 
@@ -48,11 +49,15 @@ export class HomeComponent implements OnInit {
   }
 
   prendiDatiUtente() {
-    this.userService.datiUtente.subscribe((res: any) => {
+    this.userService.datiUtente.subscribe({
+      next: (response) => {
+        this.utenteRegistrato = response;
+      },
+      error: (error) => {
+        console.log(error);
+      }
       // localStorage.setItem('name', res.name);
       // localStorage.setItem('email', res.email);
-      this.name = res.name;
-      this.email = res.email;
     })
     // if(localStorage.getItem('name')){
     //   this.name = localStorage.getItem('name');
@@ -63,7 +68,6 @@ export class HomeComponent implements OnInit {
   closeModal(){
     // localStorage.removeItem('name');
     // localStorage.removeItem('email');
-    this.name = '';
-    this.email = '';
+    this.utenteRegistrato = '';
   }
 }

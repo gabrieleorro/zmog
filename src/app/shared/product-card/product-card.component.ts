@@ -42,6 +42,9 @@ export class ProductCardComponent implements OnInit, OnDestroy {
             this.prodottiTotali = response.filter(prodotto => prodotto.type === tipo).length;
           } else {
             this.products = response;
+            if(this.pag != 'prodotti') {
+              this.products = response.sort((a, b) => b.sells - a.sells).slice(0, 4);
+            }
           }
       },
       error: (error) => {

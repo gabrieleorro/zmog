@@ -44,30 +44,18 @@
 </div>
 
 <section class="container">
-  <h2>Prodotti in evidenza</h2>
-  <!-- <app-product-card [products]="prodotti"></app-product-card> -->
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let prodotto of prodotti">
-      <div class="card">
-        <img src="{{prodotto.image}}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{prodotto.title}}</h5>
-          <p class="card-text">Solo 35 pz in stock! AFFRETTATI</p>
-          <a routerLink="/prodotti/dettaglio/{{prodotto.title}}/{{prodotto._id}}" class="btn btn-primary">VISUALIZZA</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2 class="testo-evidenza">PRODOTTI IN EVIDENZA</h2>
+  <app-product-card [pag]="'home'"></app-product-card>
 </section>
 
-<ng-template [ngIf]="name">
+<ng-template [ngIf]="utenteRegistrato">
   <div id="container-utente">
     <div id="dati-utente">
-      <h2>Grazie {{name}} per esserti registrato, ecco i tuoi dati:</h2>
+      <h2>Grazie {{utenteRegistrato.name}} per esserti registrato, ecco i tuoi dati:</h2>
       <hr class="bordino-popup">
       <ul>
-        <li>Nome: {{name}}</li>
-        <li>Email: {{email}}</li>
+        <li>Nome: {{utenteRegistrato.name}}</li>
+        <li>Email: {{utenteRegistrato.email}}</li>
       </ul>
       <hr class="bordino-popup">
       <button class="btn btn-primary btn-lg" (click)="closeModal()">Chiudi</button>
