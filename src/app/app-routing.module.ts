@@ -1,3 +1,4 @@
+import { NewProductComponent } from './components/products/new-product/new-product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'prodotti', component: ProductsComponent, children: [
     {path: 'dettaglio/:title/:_id', component: DetailComponent},
+    { path: 'nuovo-prodotto', component: NewProductComponent},
     {path: '', pathMatch: 'full', component: ProductsListComponent}
   ]},
   {path: 'registrazione', component: RegistrationComponent},

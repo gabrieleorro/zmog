@@ -5,6 +5,7 @@ import { PrimeNGConfig } from 'primeng/api';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -14,6 +15,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class RegistrationComponent {
 
   countries: any[];
+  utenteInserito: any;
 
   constructor(
     private config: PrimeNGConfig,
@@ -52,13 +54,20 @@ export class RegistrationComponent {
   );
 
   onSubmit() {
-    const user = {
-      name: this.form.value.name,
-      email: this.form.value.email
-    }
+    const user = this.form.value;
 
-    this.userService.datiUtente.next(user);
-    this.router.navigate(['home']);
+    this.userService.insertUser(user).pipe(take(1)).subscribe({
+      next: (res) => {
+        console.log('Utente inserito correttamente', res);
+        this.utenteInserito = res;
+        this.userService.datiUtente.next(user);
+        this.router.navigate(['home']);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+
   }
 
   open(content: any, titolo?: string) {

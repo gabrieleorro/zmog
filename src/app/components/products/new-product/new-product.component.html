@@ -1,0 +1,131 @@
+<div class="container-form">
+  <section class="gradient-custom-2">
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12">
+          <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+            <div class="card-body p-0">
+              <form #f="ngForm" [formGroup]="form" (ngSubmit)="addProduct()">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="p-5">
+                      <h3 class="fw-normal mb-5" style="color: #000000;">NUOVO PRODOTTO</h3>
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <label class="form-label" for="title">Nome prodotto</label>
+                            <input placeholder="Nome" type="text" name="title" class="form-control form-control-lg" formControlName="title"/>
+                          </div>
+                          <div class="errors">
+                            <!-- <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">*Il campo nome è obbligatorio</p> -->
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <label class="form-label" for="type">Tipo prodotto</label>
+                            <input placeholder="t-shirt/felpa/scarpe/gadget" type="text" name="type" class="form-control form-control-lg" formControlName="type"/>
+                          </div>
+                          <div class="errors">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                          <div class="form-outline">
+                            <label class="form-label" for="price">Prezzo</label>
+                            <input placeholder="€ " type="text" name="price" class="form-control form-control-lg" formControlName="price"/>
+                          </div>
+                          <div class="errors">
+                            <!-- <p class="help is-danger" *ngIf="!form.get('username').valid && form.get('username').touched">Il campo username è obbligatorio.</p> -->
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                          <div class="form-outline">
+                            <label class="form-label" for="sells">Nr vendite</label>
+                            <input placeholder="default 0" type="text" name="sells" class="form-control form-control-lg" formControlName="sells"/>
+                          </div>
+                          <div class="errors">
+                            <!-- <p class="help is-danger" *ngIf="!form.get('username').valid && form.get('username').touched">Il campo username è obbligatorio.</p> -->
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 bg-indigo text-white">
+                    <div class="p-5">
+                      <h3 class="fw-normal mb-5">INFORMAZIONI AGGIUNTIVE</h3>
+
+                      <div class="mb-4 pb-2">
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="description">Descrizione prodotto</label>
+                          <input placeholder="Descrizione da rendere textarea" type="text" name="description" class="form-control form-control-lg" formControlName="description"/>
+                        </div>
+                      </div>
+
+                      <div class="mb-4 pb-2">
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="country">Immagine prodotto</label>
+                          <input placeholder="Img url" type="url" name="image" class="form-control form-control-lg" formControlName="image"/>
+                        </div>
+                      </div>
+
+                      <div class="form-check d-flex justify-content-center mb-4 pb-3">
+                        <div class="check">
+                          <input class="form-check-input me-3" type="checkbox" name="published" formControlName="published"/>
+                          <label class="form-check-label text-white" for="published">Pubblicare prodotto?</label>
+                          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button type="submit" class="btn btn-register btn-lg" [disabled]="!form.valid" (click)="open(modaleProdotto)">Inserisci</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #modaleProdotto let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title">Grazie per aver inserito il prodotto, ecco il riepilogo:</h3>
+    <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-6">
+        <div class="testo-riepilogo">
+          <ul class="lista-riepilogo">
+            <li>{{prodottoInserito.title}}</li>
+            <hr class="bordino-dettagli">
+            <li>Tipologia: {{prodottoInserito.type}}</li>
+            <hr class="bordino-dettagli">
+            <li>{{prodottoInserito.description | slice: 0:200}}</li>
+            <hr class="bordino-dettagli">
+            <li>Prezzo: {{prodottoInserito.price | currency: 'EUR'}}</li>
+            <hr class="bordino-dettagli">
+            <li>Pubblicato: <strong>{{prodottoInserito.published}}</strong></li>
+            <hr class="bordino-dettagli">
+            <li>Creato in data: {{prodottoInserito.createdAt | date}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <img [src]="prodottoInserito.image" class="immagine-prodotto">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-modal" (click)="modal.dismiss()">CHIUDI</button>
+    <button type="button" class="btn btn-modal" (click)="modal.close()" ngbAutoFocus>NUOVO PRODOTTO</button>
+  </div>
+</ng-template>
+

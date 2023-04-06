@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ProductCardComponent } from './shared/product-card/product-card.component';
 import { DetailComponent } from './components/products/detail/detail.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
+import { NewProductComponent } from './components/products/new-product/new-product.component';
 
 
 
@@ -37,7 +39,8 @@ import { ProductsListComponent } from './components/products/products-list/produ
     ProductCardComponent,
     DetailComponent,
     ProductsListComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { ProductsListComponent } from './components/products/products-list/produ
     ImageModule,
     MessagesModule,
     PaginatorModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
