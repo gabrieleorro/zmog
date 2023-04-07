@@ -1,4 +1,4 @@
-import { first, take } from 'rxjs';
+import { delay, first, take } from 'rxjs';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
@@ -19,6 +19,7 @@ export class ProductCardComponent implements OnInit, OnDestroy {
 
   prodottiFiltrati: Product[];
   filtro: string = '';
+  loading = true;
 
   constructor(
     private productService: ProductService,
@@ -38,9 +39,11 @@ export class ProductCardComponent implements OnInit, OnDestroy {
           this.prodottiTotali = response.length;
           if(tipo != 'all') {
             // Filtra i prodotti in base al tipo di abbigliamento specificato
+            this.loading = false;
             this.products = response.filter(prodotto => prodotto.type === tipo);
             this.prodottiTotali = response.filter(prodotto => prodotto.type === tipo).length;
           } else {
+            this.loading = false;
             this.products = response;
             if(this.pag != 'prodotti') {
               this.products = response.sort((a, b) => b.sells - a.sells).slice(0, 4);

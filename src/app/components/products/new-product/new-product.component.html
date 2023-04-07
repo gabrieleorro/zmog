@@ -62,7 +62,8 @@
                       <div class="mb-4 pb-2">
                         <div class="form-outline form-white">
                           <label class="form-label" for="description">Descrizione prodotto</label>
-                          <input placeholder="Descrizione da rendere textarea" type="text" name="description" class="form-control form-control-lg" formControlName="description"/>
+                          <!-- <input placeholder="Descrizione da rendere textarea" type="text" name="description" class="form-control form-control-lg" formControlName="description"/> -->
+                          <textarea name="description" id="description" cols="30" rows="10" class="form-control form-control-lg" formControlName="description"></textarea>
                         </div>
                       </div>
 
@@ -73,7 +74,7 @@
                         </div>
                       </div>
 
-                      <div class="form-check d-flex justify-content-center mb-4 pb-3">
+                      <div class="form-check mb-4 pb-3">
                         <div class="check">
                           <input class="form-check-input me-3" type="checkbox" name="published" formControlName="published"/>
                           <label class="form-check-label text-white" for="published">Pubblicare prodotto?</label>

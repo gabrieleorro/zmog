@@ -2,6 +2,11 @@
 
 .bordo-carousel {
   border-radius: 15px;
+
+  .picsum-img-wrapper {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .carousel-caption {

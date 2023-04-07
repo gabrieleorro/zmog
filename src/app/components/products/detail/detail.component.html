@@ -1,85 +1,121 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-6 container-lato-sx">
-      <div class="container-prodotto-image">
-        <p-image src="{{prodotto.image}}" alt="Image" [preview]="true"></p-image>
-      </div>
+<ng-template [ngIf]="loading" [ngIfElse]="load">
+  <div class="caricamento">
+    <div class="spinner">
+      <div class="spinnerin"></div>
     </div>
-    <!-- <div class="col"></div> -->
-    <div class="col-6">
-      <div class="prodotto-title">
-        <h2>{{prodotto.title}}</h2>
-      </div>
-      <div class="prodotto-price">
-        <p><br><br>{{prodotto.price | currency:'EUR'}}</p>
-      </div>
-      <hr class="bordino-dettagli">
-      <div class="frase-selettore">
-        <img src="https://www.svgrepo.com/show/113293/clothes-hanger.svg" class="icona-stampella">
-        <h1>Qual è la mia taglia?</h1>
-      </div>
-      <label class="testo-label">Taglia</label>
-      <div class="taglie">
-        <button class="tasto">XS</button>
-        <button class="tasto">S</button>
-        <button class="tasto">M</button>
-        <button class="tasto">L</button>
-        <button class="tasto">XL</button>
-      </div>
-      <label class="testo-label">Quantità</label>
-      <div class="selettore-quantita">
-        <button (click)="decrementa()">-</button>
-        <input type="number" [(ngModel)]="quantita" min="1" />
-        <button (click)="incrementa()">+</button>
-      </div>
-      <button class="button-carrello">Aggiungi al carrello</button>
+  </div>
+</ng-template>
 
-      <!-- <div class="card-feedback flex justify-content-center">
-        <label class="testo-feedback">Se hai acquistato il prodotto, lascia un feedback:</label>
-        <p-rating [(ngModel)]="value" [stars]="5">
-            <ng-template pTemplate="cancel">
-                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png" width="25px" height="25px" />
-            </ng-template>
-            <ng-template pTemplate="onicon">
-                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png" width="25px" height="25px" />
-            </ng-template>
-            <ng-template pTemplate="officon">
-                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px" height="25px" />
-            </ng-template>
-        </p-rating>
-      </div> -->
-
-      <div class="rating">
-        <label for="star-1">
-          <input type="radio" id="star-1" name="star-radio" value="star-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-        </label>
-        <label for="star-2">
-          <input type="radio" id="star-2" name="star-radio" value="star-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-        </label>
-        <label for="star-3">
-          <input type="radio" id="star-3" name="star-radio" value="star-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-        </label>
-        <label for="star-4">
-          <input type="radio" id="star-4" name="star-radio" value="star-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-        </label>
-        <label for="star-5">
-          <input type="radio" id="star-5" name="star-radio" value="star-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-        </label>
+<ng-template #load>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6 container-lato-sx">
+        <div class="container-prodotto-image">
+          <p-image src="{{prodotto.image}}" alt="Image" [preview]="true"></p-image>
+        </div>
       </div>
+      <!-- <div class="col"></div> -->
+      <div class="col-6">
+        <div class="prodotto-title">
+          <h2>{{prodotto.title}}</h2>
+        </div>
+        <div class="prodotto-price">
+          <p><br><br>{{prodotto.price | currency:'EUR'}}</p>
+        </div>
+        <hr class="bordino-dettagli">
+        <div class="frase-selettore" *ngIf="prodotto.type != 'gadget'">
+          <img src="https://www.svgrepo.com/show/113293/clothes-hanger.svg" class="icona-stampella">
+          <h1>Qual è la mia taglia?</h1>
+        </div>
+        <label class="testo-label" *ngIf="prodotto.type != 'gadget'">Taglia</label>
+        <div class="taglie" *ngIf="prodotto.type != 'scarpe' && prodotto.type != 'gadget'">
+          <button class="tasto">XS</button>
+          <button class="tasto">S</button>
+          <button class="tasto">M</button>
+          <button class="tasto">L</button>
+          <button class="tasto">XL</button>
+        </div>
+        <div class="taglie" *ngIf="prodotto.type == 'scarpe'">
+          <div class="row">
+            <button class="tasto unavailable" disabled>35.5</button>
+            <button class="tasto unavailable" disabled>36</button>
+            <button class="tasto">36.5</button>
+            <button class="tasto unavailable" disabled>37</button>
+            <button class="tasto">37.5</button>
+            <button class="tasto unavailable" disabled>38</button>
+            <button class="tasto unavailable" disabled>38.5</button>
+          </div>
+          <div class="row">
+            <button class="tasto unavailable" disabled>39</button>
+            <button class="tasto">40</button>
+            <button class="tasto unavailable" disabled>40.5</button>
+            <button class="tasto unavailable" disabled>41</button>
+            <button class="tasto">42</button>
+            <button class="tasto unavailable" disabled>42.5</button>
+            <button class="tasto">43</button>
+          </div>
+        </div>
+        <label class="testo-label">Quantità</label>
+        <div class="selettore-quantita">
+          <button (click)="decrementa()">-</button>
+          <input type="number" [(ngModel)]="quantita" min="1" />
+          <button (click)="incrementa()">+</button>
+        </div>
+        <button class="button-carrello">Aggiungi al carrello</button>
+
+        <!-- <div class="card-feedback flex justify-content-center">
+          <label class="testo-feedback">Se hai acquistato il prodotto, lascia un feedback:</label>
+          <p-rating [(ngModel)]="value" [stars]="5">
+              <ng-template pTemplate="cancel">
+                  <img src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png" width="25px" height="25px" />
+              </ng-template>
+              <ng-template pTemplate="onicon">
+                  <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png" width="25px" height="25px" />
+              </ng-template>
+              <ng-template pTemplate="officon">
+                  <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px" height="25px" />
+              </ng-template>
+          </p-rating>
+        </div> -->
+
+        <div class="card-feedback flex justify-content-center">
+          <label class="testo-feedback">Se hai acquistato il prodotto, lascia un feedback:</label>
+          <div class="rating">
+            <label for="star-1">
+              <input type="radio" id="star-1" name="star-radio" value="star-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <label for="star-2">
+              <input type="radio" id="star-2" name="star-radio" value="star-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <label for="star-3">
+              <input type="radio" id="star-3" name="star-radio" value="star-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <label for="star-4">
+              <input type="radio" id="star-4" name="star-radio" value="star-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+            <label for="star-5">
+              <input type="radio" id="star-5" name="star-radio" value="star-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+            </label>
+          </div>
+        </div>
 
 
-      <div class="prodotto-description">
-        <p>{{prodotto.description}}</p>
-      </div>
-      <hr class="not-in-quickbuy">
-      <div class="image-taglie">
-        <img src="https://cdn.shopify.com/s/files/1/0608/1806/3572/files/Brown_Minimalist_Fashion_Size_Chart_Instagram_Post_800_x_566_px_480x480.jpg?v=1653385880">
+
+        <div class="prodotto-description">
+          <p>{{prodotto.description}}</p>
+        </div>
+        <hr class="not-in-quickbuy" *ngIf="prodotto.type != 'gadget'">
+        <label class="testo-taglie" *ngIf="prodotto.type != 'gadget'">Guida alle taglie</label>
+        <div class="image-taglie">
+          <img *ngIf="prodotto.type != 'felpa' && prodotto.type != 'gadget'" src="https://cdn.shopify.com/s/files/1/0608/1806/3572/files/Brown_Minimalist_Fashion_Size_Chart_Instagram_Post_800_x_566_px_480x480.jpg?v=1653385880">
+          <img *ngIf="prodotto.type == 'felpa'" src="https://cdn.shopify.com/s/files/1/0598/2355/4752/files/SIZE_CHART_HOODIE_Tavola_disegno_1_Tavola_disegno_1_480x480.jpg?v=1632748438">
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>

@@ -18,6 +18,8 @@ export class DetailComponent implements OnInit {
   value: number;
   stars: number;
 
+  loading = true;
+
   form = new FormGroup({
     feedback: new FormControl(''),
   })
@@ -51,6 +53,7 @@ export class DetailComponent implements OnInit {
 
     this.productService.getProduct(id).subscribe({
       next: (res) => {
+        this.loading = false;
         this.prodotto = res;
       },
       error: (error) => {
@@ -65,7 +68,8 @@ export class DetailComponent implements OnInit {
 
       this.productService.getProduct(id).subscribe({
         next: (res) => {
-          this.prodotto = res;
+        this.loading = false;
+        this.prodotto = res;
         },
         error: (error) => {
           console.log(error);
