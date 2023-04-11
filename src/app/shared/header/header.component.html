@@ -8,11 +8,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <fa-icon [icon]="faShop" class="align-self-center nav-icon"></fa-icon>
+          <fa-icon [icon]="home" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" routerLink="home">Home</a>
           </li>
-          <fa-icon [icon]="faShirt" class="align-self-center nav-icon"></fa-icon>
+          <fa-icon [icon]="prodotti" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" routerLink="prodotti">Prodotti</a>
           </li>
@@ -20,19 +20,24 @@
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <fa-icon [icon]="faPlus" class="align-self-center nav-icon"></fa-icon>
+          <fa-icon [icon]="nuovoProdotto" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" routerLink="/prodotti/nuovo-prodotto">New Product</a>
           </li>
-          <fa-icon [icon]="faBasketShopping" class="align-self-center nav-icon"></fa-icon>
+          <fa-icon [icon]="carrello" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" routerLink="home">Carrello</a>
           </li>
-          <fa-icon [icon]="faUser" class="align-self-center nav-icon"></fa-icon>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="registrazione">Area Riservata</a>
+          <li class="nav-item user" *ngIf="!authService.isLogged()">
+            <fa-icon [icon]="notLogged" class="align-self-center nav-icon"></fa-icon>
+            <a class="nav-link" routerLink="login">Area Riservata</a>
           </li>
-          <fa-icon [icon]="faAddressCard" class="align-self-center nav-icon"></fa-icon>
+          <li class="nav-item user" *ngIf="authService.isLogged()">
+            <fa-icon [icon]="logged" class="align-self-center nav-icon"></fa-icon>
+            <span class="name">Ciao {{user.name}}</span>
+            <a class="nav-link" (click)="logout()"> - Esci</a>
+          </li>
+          <fa-icon [icon]="contatti" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
             <a class="nav-link" routerLink="home">Contatti</a>
           </li>

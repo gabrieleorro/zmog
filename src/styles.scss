@@ -76,6 +76,10 @@ h2 {
   height: 39px;
 }
 
+.p-input-icon-right > .p-inputtext {
+  padding-right: 4rem!important;
+}
+
 p-password.ng-invalid.ng-touched > .p-password > .p-inputtext {
   border: 2px solid red;
 }
@@ -154,7 +158,6 @@ p-password.ng-valid.ng-touched > .p-password > .p-inputtext {
   font-weight: normal;
   src: url('./assets/fonts/SFMonoRegular.woff') format('woff');
 }
-
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

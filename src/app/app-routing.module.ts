@@ -7,17 +7,19 @@ import { DetailComponent } from './components/products/detail/detail.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { ProductsComponent } from './components/products/products.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'prodotti', component: ProductsComponent, children: [
-    {path: 'dettaglio/:title/:_id', component: DetailComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: 'prodotti', component: ProductsComponent, children: [
+    { path: 'dettaglio/:title/:_id', component: DetailComponent},
     { path: 'nuovo-prodotto', component: NewProductComponent},
-    {path: '', pathMatch: 'full', component: ProductsListComponent}
+    { path: '', pathMatch: 'full', component: ProductsListComponent}
   ]},
-  {path: 'registrazione', component: RegistrationComponent},
-  {path: '**', redirectTo: 'home'}
+  { path: 'registrazione', component: RegistrationComponent},
+  { path: 'login', component: LoginComponent},
+  { path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({

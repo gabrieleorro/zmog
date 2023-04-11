@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   datiUtente = new ReplaySubject;
+  userRole = new ReplaySubject;
   apiBaseUrl = 'api/users';
 
   constructor(

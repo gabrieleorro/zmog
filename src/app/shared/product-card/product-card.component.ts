@@ -2,11 +2,14 @@ import { delay, first, take } from 'rxjs';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { MessageService } from 'primeng/api';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+  styleUrls: ['./product-card.component.scss'],
+  providers: [MessageService]
 })
 export class ProductCardComponent implements OnInit, OnDestroy {
 
@@ -20,9 +23,12 @@ export class ProductCardComponent implements OnInit, OnDestroy {
   prodottiFiltrati: Product[];
   filtro: string = '';
   loading = true;
+  ruolo: any;
 
   constructor(
     private productService: ProductService,
+    private messageService: MessageService,
+    private userService: UserService,
   ) {}
 
   ngOnDestroy(): void {
@@ -31,12 +37,25 @@ export class ProductCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getProdotti('all');
+    if(JSON.parse(localStorage.getItem('user')) != null) {
+      this.userService.userRole.subscribe({
+        next: (res) => {
+          this.ruolo = res;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+    }
   }
 
   getProdotti(tipo: string): void {
     this.productService.getProducts().pipe(first()).subscribe({
       next: (response) => {
           this.prodottiTotali = response.length;
+          if(response) {
+            this.messageService.add({severity: 'success', summary: 'Completato!', detail: 'Prodotto caricato correttamente!'});
+          }
           if(tipo != 'all') {
             // Filtra i prodotti in base al tipo di abbigliamento specificato
             this.loading = false;

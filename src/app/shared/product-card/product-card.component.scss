@@ -113,6 +113,7 @@
       font-size: 23px;
       color: $viola;
       margin: 2px;
+      min-height: 45px;
     }
 
     .card-text {
@@ -130,12 +131,17 @@
       background: $viola;
       border: none;
       margin: auto;
-      padding: 8px 35px;
+      padding: 8px 25px;
+    }
+
+    .delete {
+      background: #2d0944!important;
+      margin-left: 5px!important;
     }
   }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 468px) {
+@media only screen and (min-width: 0px) and (max-width: 480px) {
   .card-container {
     width: 100%;
     margin-left: 0%;

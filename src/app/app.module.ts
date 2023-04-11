@@ -15,6 +15,7 @@ import { RatingModule } from 'primeng/rating';
 import { ImageModule } from 'primeng/image';
 import { MessagesModule } from 'primeng/messages';
 import { PaginatorModule } from 'primeng/paginator';
+import { ToastModule } from 'primeng/toast';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -25,6 +26,7 @@ import { ProductCardComponent } from './shared/product-card/product-card.compone
 import { DetailComponent } from './components/products/detail/detail.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { NewProductComponent } from './components/products/new-product/new-product.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 
 
@@ -40,7 +42,8 @@ import { NewProductComponent } from './components/products/new-product/new-produ
     DetailComponent,
     ProductsListComponent,
     RegistrationComponent,
-    NewProductComponent
+    NewProductComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { NewProductComponent } from './components/products/new-product/new-produ
     MessagesModule,
     PaginatorModule,
     HttpClientModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
