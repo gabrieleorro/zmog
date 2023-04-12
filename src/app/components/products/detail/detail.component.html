@@ -105,10 +105,8 @@
           </div>
         </div>
 
-
-
         <div class="prodotto-description">
-          <p>{{prodotto.description}}</p>
+          <p><span [innerHTML]="prodotto.description"></span></p>
         </div>
         <hr class="not-in-quickbuy" *ngIf="prodotto.type != 'gadget'">
         <label class="testo-taglie" *ngIf="prodotto.type != 'gadget'">Guida alle taglie</label>

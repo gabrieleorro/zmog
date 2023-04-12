@@ -6,6 +6,7 @@ import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { take } from 'rxjs';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-registration',
@@ -42,6 +43,7 @@ export class RegistrationComponent {
     cellPhone: new FormControl('', [Validators.required, Validators.pattern(/\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/)]),
     ripetiPassword: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
+    note: new FormControl(''),
     gender: new FormControl('', [Validators.required]),
     address: new FormControl('', Validators.required),
     additionalInformation: new FormControl(''),
@@ -52,6 +54,47 @@ export class RegistrationComponent {
   },
   [CustomValidator.MatchValidator('password', 'ripetiPassword')]
   );
+
+  Editor = ClassicEditorBuild;
+
+  editorConfig = {
+    toolbar: {
+      items: [
+        'bold',
+        'italic',
+        'link',
+        'bulletedList',
+        'numberedList',
+        '|',
+        'indent',
+        'outdent',
+        '|',
+        'heading',
+        '|',
+        'codeBlock',
+        'blockQuote',
+        'insertTable',
+        'undo',
+        'redo',
+      ]
+    },
+    image: {
+      toolbar: [
+        'imageStyle:full',
+        'imageStyle:side',
+        '|',
+        'imageTextAlternative'
+      ]
+    },
+    table: {
+      contentToolbar: [
+        'tableColumn',
+        'tableRow',
+        'mergeTableCells'
+      ]
+    },
+    height: 300,
+  };
 
   onSubmit() {
     const user = this.form.value;

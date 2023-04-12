@@ -8,6 +8,8 @@ import { ProductsListComponent } from './components/products/products-list/produ
 import { ProductsComponent } from './components/products/products.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,6 +21,7 @@ const routes: Routes = [
   ]},
   { path: 'registrazione', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'profilo', component: ProfileComponent, canActivate: [LoggedInGuard]},
   { path: '**', redirectTo: 'home'}
 ];
 

@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="pagina-profilo">
+    <div class="bottoni-sopra">
+      <div class="button-return">
+        <a class="back" routerLink="/prodotti">Ritorna allo shop</a>
+      </div>
+      <div class="button-modify">
+        <a class="modifica" routerLink="/prodotti">Modifica</a>
+      </div>
+      <div class="button-logout">
+        <a class="logout" (click)="logout()">Logout</a>
+      </div>
+    </div>
+    <h2 id="titolone">IL MIO ACCOUNT</h2>
+    <p class="contenuto last-upd">Ultima modifica {{ update }}</p>
+    <div class="row">
+      <div class="justify-content-center col-md-6">
+        <h2 id="sezioncine">DATI PERSONALI</h2>
+        <hr class="bordino-dettagli">
+        <div class="customer-detail">
+          <h2 id="sezione-interna">Anagrafica</h2>
+          <p class="contenuto">{{ user.name }} {{ user.surname }}</p>
+          <p class="contenuto">{{ user.birthDate | date }}</p>
+          <p class="contenuto">{{user.gender}}</p>
+          <h2 id="sezione-interna">Account</h2>
+          <p class="contenuto">Account creato {{ data }}</p>
+          <p class="contenuto">Ruolo: {{ user.role }}</p>
+          <p class="contenuto">Note aggiuntive: <span [innerHTML]="user.note ? user.note : ' Nessuna nota aggiuntiva.'"></span></p>
+          <h2 id="sezione-interna">Username</h2>
+          <p class="contenuto">{{ user.username }}</p>
+        </div>
+      </div>
+      <div class="justify-content-center col-md-6">
+        <h2 id="sezioncine">INDIRIZZO E CONTATTI</h2>
+        <hr class="bordino-dettagli">
+        <div class="customer-address">
+          <h2 id="sezione-interna">Domicilio e residenza</h2>
+          <p class="contenuto">{{ user.address }}</p>
+          <p class="contenuto">{{ user.additionalInformation ? user.additionalInformation : 'Nessuna informazione aggiuntiva.' }}</p>
+          <p class="contenuto">{{ user.city }}, {{ user.country }}</p>
+          <p class="contenuto">000{{ user.cap }}</p>
+          <h2 id="sezione-interna">Telefono</h2>
+          <p class="contenuto">{{ user.cellPhone }}</p>
+          <h2 id="sezione-interna">Email</h2>
+          <p class="contenuto">{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

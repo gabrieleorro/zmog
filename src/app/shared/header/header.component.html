@@ -35,6 +35,7 @@
           <li class="nav-item user" *ngIf="authService.isLogged()">
             <fa-icon [icon]="logged" class="align-self-center nav-icon"></fa-icon>
             <span class="name">Ciao {{user.name}}</span>
+            <a class="nav-link" routerLink="profilo"> - Profilo</a>
             <a class="nav-link" (click)="logout()"> - Esci</a>
           </li>
           <fa-icon [icon]="contatti" class="align-self-center nav-icon"></fa-icon>

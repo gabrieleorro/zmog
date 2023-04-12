@@ -16,6 +16,7 @@ import { ImageModule } from 'primeng/image';
 import { MessagesModule } from 'primeng/messages';
 import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -27,6 +28,7 @@ import { DetailComponent } from './components/products/detail/detail.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { NewProductComponent } from './components/products/new-product/new-product.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 
 
@@ -43,7 +45,8 @@ import { LoginComponent } from './components/user/login/login.component';
     ProductsListComponent,
     RegistrationComponent,
     NewProductComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { LoginComponent } from './components/user/login/login.component';
     PaginatorModule,
     HttpClientModule,
     ToastModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

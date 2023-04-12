@@ -194,6 +194,14 @@
                         </div>
                       </div>
 
+                      <div class="mb-4">
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="note">Note utente aggiuntive</label>
+                          <ckeditor style="color: black;" [editor]="Editor" [config]="editorConfig" class="note-utente" formControlName="note"></ckeditor>
+                          <!-- <input type="text" name="note" class="form-control form-control-lg" formControlName="note"/> -->
+                        </div>
+                      </div>
+
                       <div class="form-check d-flex justify-content-start mb-4 pb-3">
                         <div class="check">
                           <input class="form-check-input me-3" type="checkbox" name="terms" formControlName="terms"/>

@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { MessageService } from 'primeng/api';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-new-product',
@@ -32,6 +33,47 @@ export class NewProductComponent {
     type: new FormControl('', Validators.required),
     published: new FormControl(false),
   });
+
+  Editor = ClassicEditorBuild;
+
+  editorConfig = {
+    toolbar: {
+      items: [
+        'bold',
+        'italic',
+        'link',
+        'bulletedList',
+        'numberedList',
+        '|',
+        'indent',
+        'outdent',
+        '|',
+        'heading',
+        '|',
+        'codeBlock',
+        'blockQuote',
+        'insertTable',
+        'undo',
+        'redo',
+      ]
+    },
+    image: {
+      toolbar: [
+        'imageStyle:full',
+        'imageStyle:side',
+        '|',
+        'imageTextAlternative'
+      ]
+    },
+    table: {
+      contentToolbar: [
+        'tableColumn',
+        'tableRow',
+        'mergeTableCells'
+      ]
+    },
+    height: 300,
+  };
 
   addProduct(): void {
     const product = this.form.value;

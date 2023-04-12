@@ -63,7 +63,8 @@
                         <div class="form-outline form-white">
                           <label class="form-label" for="description">Descrizione prodotto</label>
                           <!-- <input placeholder="Descrizione da rendere textarea" type="text" name="description" class="form-control form-control-lg" formControlName="description"/> -->
-                          <textarea name="description" id="description" cols="30" rows="10" class="form-control form-control-lg" formControlName="description"></textarea>
+                          <!-- <textarea name="description" id="description" cols="30" rows="10" class="form-control form-control-lg" formControlName="description"></textarea> -->
+                          <ckeditor style="color: black;" [editor]="Editor" [config]="editorConfig" class="descrizione-prodotto" formControlName="description"></ckeditor>
                         </div>
                       </div>
 
@@ -110,7 +111,7 @@
             <hr class="bordino-dettagli">
             <li>Tipologia: {{prodottoInserito.type}}</li>
             <hr class="bordino-dettagli">
-            <li>{{prodottoInserito.description | slice: 0:200}}</li>
+            <li><span [innerHTML]="prodottoInserito.description | slice: 0:200">...</span></li>
             <hr class="bordino-dettagli">
             <li>Prezzo: {{prodottoInserito.price | currency: 'EUR'}}</li>
             <hr class="bordino-dettagli">

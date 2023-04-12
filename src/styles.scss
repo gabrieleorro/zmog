@@ -110,6 +110,11 @@ p-password.ng-valid.ng-touched > .p-password > .p-inputtext {
   box-shadow: 0 0 0 0.2rem $viola!important;
 }
 
+.descrizione-prodotto .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+}
+
 // Spinner
 .caricamento {
   margin-top: 50px;
