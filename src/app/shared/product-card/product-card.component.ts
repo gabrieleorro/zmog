@@ -24,6 +24,7 @@ export class ProductCardComponent implements OnInit, OnDestroy {
   filtro: string = '';
   loading = true;
   ruolo: any;
+  ricercato: string;
 
   constructor(
     private productService: ProductService,
@@ -52,6 +53,10 @@ export class ProductCardComponent implements OnInit, OnDestroy {
   getProdotti(tipo: string): void {
     this.productService.getProducts().pipe(first()).subscribe({
       next: (response) => {
+        if(this.pag === 'ricerca') {
+          this.loading = false;
+          this.ricercaProdotti();
+        } else {
           this.prodottiTotali = response.length;
           if(response) {
             this.messageService.add({severity: 'success', summary: 'Completato!', detail: 'Prodotto caricato correttamente!'});
@@ -68,6 +73,7 @@ export class ProductCardComponent implements OnInit, OnDestroy {
               this.products = response.sort((a, b) => b.sells - a.sells).slice(0, 4);
             }
           }
+        }
       },
       error: (error) => {
         console.log(error);
@@ -80,5 +86,29 @@ export class ProductCardComponent implements OnInit, OnDestroy {
     this.page = event.page;
   }
 
+  ricercaProdotti() {
+    this.productService.testoCercato.subscribe({
+      next: (res: string) => {
+        this.ricercato = res;
+        if (this.ricercato) {
+          this.productService.findProducts(this.ricercato).subscribe({
+            next: (res) => {
+              this.products = res;
+              this.prodottiTotali = res.length;
+              if(res) {
+                this.messageService.add({severity: 'success', summary:'Completato', detail: 'Prodotti cercati correttamente.', life: 5000})
+              }
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
 
 }

@@ -28,6 +28,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "creditcardpayments": "^1.0.3",
     "jquery": "^3.6.4",
     "moment": "^2.29.4",
     "primeicons": "^6.0.1",

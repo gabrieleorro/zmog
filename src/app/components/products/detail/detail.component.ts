@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
+import { render } from 'creditcardpayments/creditCardPayments';
+
 
 @Component({
   selector: 'app-detail',
@@ -10,6 +13,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+
 
   prodotto: Product;
 
@@ -27,8 +31,11 @@ export class DetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
-  ) {}
+    private productService: ProductService,
+    private cartService: CartService,
+  ) {
+
+  }
 
   onSubmit(){
     console.log(this.form.value);
@@ -70,11 +77,17 @@ export class DetailComponent implements OnInit {
         next: (res) => {
         this.loading = false;
         this.prodotto = res;
+        this.productService.prodottoCart.next(res);
         },
         error: (error) => {
           console.log(error);
         }
       })
     })
+  }
+
+  addToCart() {
+    this.cartService.aggiungiProdotto(this.prodotto);
+    this.router.navigate(['cart']);
   }
 }

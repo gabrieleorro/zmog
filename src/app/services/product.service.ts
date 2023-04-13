@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 import { PRODUCTS } from '../mocks/products.mock';
-import { Observable, of} from 'rxjs';
+import { Observable, ReplaySubject, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class ProductService {
 
   apiBaseUrl = 'api/products';
+  testoCercato = new ReplaySubject;
+  prodottoCart = new ReplaySubject;
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +28,10 @@ export class ProductService {
 
   insertProduct(product: any): Observable<any> {
     return this.http.post<any>(`${this.apiBaseUrl}/`, product);
+  }
+
+  findProducts(testo: string): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}/cerca/${testo}`);
   }
 
 }

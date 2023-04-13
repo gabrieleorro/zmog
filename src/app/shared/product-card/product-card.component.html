@@ -6,7 +6,7 @@
   </div>
 </ng-template>
 <ng-template #load>
-  <div *ngIf="pag != 'home'">
+  <div *ngIf="pag != 'home' && pag != 'ricerca'">
     <div class="selettore-tipo">
       <button class="bottone" (click)="getProdotti('all')">ALL</button>
       <button class="bottone" (click)="getProdotti('felpa')">FELPE</button>

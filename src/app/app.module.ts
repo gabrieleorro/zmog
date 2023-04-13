@@ -29,6 +29,8 @@ import { ProductsListComponent } from './components/products/products-list/produ
 import { NewProductComponent } from './components/products/new-product/new-product.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
+import { ResultComponent } from './components/products/result/result.component';
+import { CartComponent } from './components/products/cart/cart.component';
 
 
 
@@ -46,7 +48,9 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     RegistrationComponent,
     NewProductComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    ResultComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
