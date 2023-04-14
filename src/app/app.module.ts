@@ -31,6 +31,8 @@ import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { ResultComponent } from './components/products/result/result.component';
 import { CartComponent } from './components/products/cart/cart.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { DeliveryTimeComponent } from './components/delivery-time/delivery-time.component';
 
 
 
@@ -50,7 +52,9 @@ import { CartComponent } from './components/products/cart/cart.component';
     LoginComponent,
     ProfileComponent,
     ResultComponent,
-    CartComponent
+    CartComponent,
+    ContactsComponent,
+    DeliveryTimeComponent
   ],
   imports: [
     BrowserModule,

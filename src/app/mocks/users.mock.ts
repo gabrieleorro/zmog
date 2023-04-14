@@ -1,0 +1,42 @@
+export const USERS: any[] = [
+  {
+    _id: 1,
+    name: 'Gabriele',
+    surname: 'Orro',
+    birthDate: '2001-01-18T00:00:00.000+00:00',
+    username: 'gabagne',
+    password: 'P4$$w0rd!#',
+    cellPhone: '3312376311',
+    email: 'gabrieleorro@gmail.com',
+    gender: 'Uomo',
+    address: 'Via Vecchia di Grottaferrata 15',
+    additionalInformation: 'Utente mockato per deploy firebase',
+    cap: '00047',
+    city: 'Marino',
+    country: 'Italia',
+    note: null,
+    role: 'admin',
+    createdAt: '2023-04-06T16:53:53.460+00:00',
+    uptatedAt: '2023-04-06T16:53:53.460+00:00'
+  },
+  {
+    _id: 2,
+    name: 'Daniele',
+    surname: 'Verdi',
+    birthDate: '2001-02-16T00:00:00.000+00:00',
+    username: 'danielex',
+    password: 'Daniele1!',
+    cellPhone: '+393312376311',
+    email: 'daniele@gmail.com',
+    gender: 'Uomo',
+    address: 'Via di Marino, 24',
+    additionalInformation: null,
+    cap: '00047',
+    city: 'Marino',
+    country: 'Italia',
+    note: '<p>Test sulle note utente aggiuntive</p>',
+    role: 'user',
+    createdAt: '2023-04-12T15:47:13.849+00:00',
+    uptatedAt: '2023-04-12T15:47:13.849+00:00'
+  }
+]

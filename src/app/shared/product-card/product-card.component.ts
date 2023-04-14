@@ -39,15 +39,18 @@ export class ProductCardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getProdotti('all');
     if(JSON.parse(localStorage.getItem('user')) != null) {
-      this.userService.userRole.subscribe({
-        next: (res) => {
-          this.ruolo = res;
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      })
+      const user = JSON.parse(localStorage.getItem('user'));
+      this.onGetUser(user.username);
     }
+  }
+
+  onGetUser(username): void {
+    this.userService.getUser(username).pipe(take(1)).subscribe({
+      next: res => {
+        this.ruolo = res.role;
+      },
+      error: (err) => console.log(err)
+    })
   }
 
   getProdotti(tipo: string): void {

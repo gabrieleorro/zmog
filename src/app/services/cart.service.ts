@@ -15,9 +15,13 @@ export class CartService {
     return this.carrelloSubject.asObservable();
   }
 
-  aggiungiProdotto(prodotto: any) {
-    this.prodotti.push(prodotto);
-    this.carrelloSubject.next(this.prodotti);
+  aggiungiProdotto(prodotto: any, quantita: number, taglia: string) {
+    // for (let i = 0; i < quantita; i++) {
+      prodotto.taglia = taglia;
+      prodotto.quantita = quantita;
+      this.prodotti.push(prodotto);
+      this.carrelloSubject.next(this.prodotti);
+    // }
   }
 
   rimuoviProdotto(prodotto: any) {

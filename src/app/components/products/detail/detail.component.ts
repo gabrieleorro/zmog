@@ -23,6 +23,7 @@ export class DetailComponent implements OnInit {
   stars: number;
 
   loading = true;
+  tagliaSelezionata: string;
 
   form = new FormGroup({
     feedback: new FormControl(''),
@@ -86,8 +87,12 @@ export class DetailComponent implements OnInit {
     })
   }
 
-  addToCart() {
-    this.cartService.aggiungiProdotto(this.prodotto);
+  addToCart(quantita) {
+    this.cartService.aggiungiProdotto(this.prodotto, quantita, this.tagliaSelezionata);
     this.router.navigate(['cart']);
+  }
+
+  selezionaTaglia(taglia: string) {
+    this.tagliaSelezionata = taglia;
   }
 }

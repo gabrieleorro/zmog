@@ -27,6 +27,7 @@ export class AuthService {
       name: res.name,
       username: res.username,
       password: res.password,
+      role: res.role,
     }
     this.userService.userRole.next(res.role); // Stiamo inviando a userRole il ruolo dell'utente che ci arriverà
     localStorage.setItem('user', JSON.stringify(user));

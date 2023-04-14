@@ -60,6 +60,7 @@ h2 {
 
 .btn-primary {
   background-color: $viola;
+  font-family: 'NeueHaasDisplay'!important;
   color: $bianco;
   border: none!important;
 }
@@ -162,6 +163,86 @@ p-password.ng-valid.ng-touched > .p-password > .p-inputtext {
   font-style: normal;
   font-weight: normal;
   src: url('./assets/fonts/SFMonoRegular.woff') format('woff');
+}
+
+@media only screen  and (min-width: 320px) and (max-width: 480px) {
+  .nav-icon {
+    margin-right: 10px;
+  }
+
+  .p-image-preview-container {
+    display: flex!important;
+    justify-content: center!important;
+    height: 400px;
+  }
+  .col-6 {
+    width: 100%!important;
+  }
+  .p-image-preview-indicator {
+    align-items: center;
+  }
+  img.ng-star-inserted {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media only screen  and (min-width: 481px) and (max-width: 768px) {
+  .nav-icon {
+    margin-right: 20px;
+  }
+
+  .p-image-preview-container {
+    display: flex!important;
+    justify-content: center!important;
+    height: 400px;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  img.ng-star-inserted {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media only screen  and (min-width: 769px) and (max-width: 1024px) {
+  .nav-icon {
+    margin-right: 10px;
+  }
+
+  .p-image-preview-container {
+    display: flex!important;
+    justify-content: center!important;
+    height: 400px;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  img.ng-star-inserted {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media only screen  and (min-width: 1025px) and (max-width: 1200px) {
+  .nav-icon {
+    margin-right: 0px;
+    font-size: 110%;
+  }
+
+  .p-image-preview-container {
+    display: flex!important;
+    justify-content: center!important;
+    height: 400px;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  img.ng-star-inserted {
+    height: 700px;
+    width: 700px;
+  }
 }
 
 /* Importing Bootstrap SCSS file. */

@@ -30,30 +30,30 @@
         </div>
         <label class="testo-label" *ngIf="prodotto.type != 'gadget'">Taglia</label>
         <div class="taglie" *ngIf="prodotto.type != 'scarpe' && prodotto.type != 'gadget'">
-          <button class="tasto">XS</button>
-          <button class="tasto">S</button>
-          <button class="tasto">M</button>
-          <button class="tasto">L</button>
-          <button class="tasto">XL</button>
+          <button class="tasto" (click)="selezionaTaglia('XS')">XS</button>
+          <button class="tasto" (click)="selezionaTaglia('S')">S</button>
+          <button class="tasto" (click)="selezionaTaglia('M')">M</button>
+          <button class="tasto" (click)="selezionaTaglia('L')">L</button>
+          <button class="tasto" (click)="selezionaTaglia('XL')">XL</button>
         </div>
         <div class="taglie" *ngIf="prodotto.type == 'scarpe'">
           <div class="row">
             <button class="tasto unavailable" disabled>35.5</button>
             <button class="tasto unavailable" disabled>36</button>
-            <button class="tasto">36.5</button>
+            <button class="tasto" (click)="selezionaTaglia('36.5IT')">36.5</button>
             <button class="tasto unavailable" disabled>37</button>
-            <button class="tasto">37.5</button>
+            <button class="tasto" (click)="selezionaTaglia('37.5IT')">37.5</button>
             <button class="tasto unavailable" disabled>38</button>
             <button class="tasto unavailable" disabled>38.5</button>
           </div>
           <div class="row">
             <button class="tasto unavailable" disabled>39</button>
-            <button class="tasto">40</button>
+            <button class="tasto" (click)="selezionaTaglia('40IT')">40</button>
             <button class="tasto unavailable" disabled>40.5</button>
             <button class="tasto unavailable" disabled>41</button>
-            <button class="tasto">42</button>
+            <button class="tasto" (click)="selezionaTaglia('42IT')">42</button>
             <button class="tasto unavailable" disabled>42.5</button>
-            <button class="tasto">43</button>
+            <button class="tasto" (click)="selezionaTaglia('43IT')">43</button>
           </div>
         </div>
         <label class="testo-label">Quantità</label>
@@ -62,7 +62,7 @@
           <input type="number" [(ngModel)]="quantita" min="1" />
           <button (click)="incrementa()">+</button>
         </div>
-        <button class="button-carrello" (click)="addToCart()">Aggiungi al carrello</button>
+        <button class="button-carrello" (click)="addToCart(quantita)">Aggiungi al carrello</button>
 
 
         <div class="card-feedback flex justify-content-center">

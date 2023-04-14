@@ -170,5 +170,85 @@ export const PRODUCTS: Product[] = [
     sells: 0,
     type: 'felpa',
     published: true
+  },
+  {
+    _id: 18,
+    title: 'T-SHIRT DELTANOVE TIME IS MONEY BLACK',
+    description: 'T-shirt 100% Cotone 190gr. Vestibilità Regular. MADE IN ITALY',
+    image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/NERO_919ec31a-fb97-4e47-8069-485cc9e8ad7d_540x.jpg?v=1665499808',
+    price: 23.60,
+    sells: 1,
+    type: 't-shirt',
+    published: true
+  },
+  {
+    _id: 19,
+    title: 'DUNK LOW RETRO WHITE BLACK PANDA (2021)',
+    description: 'Le sneakers sono vendute come oggetti da collezione e come tali e per garantirne l\'autenticità non è possibile effettuare resi e sostituzioni.',
+    image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/panda_540x.jpg?v=1669200860',
+    price: 279,
+    sells: 0,
+    type: 'scarpe',
+    published: true
+  },
+  {
+    _id: 20,
+    title: 'NIKE SNEAKER KEYRING - GREY',
+    description: 'Questi portachiavi in 3D in miniatura, splendidamente realizzati e altamente dettagliati, sono il regalo perfetto per tutti gli amanti delle sneaker!  Scegliete un portachiavi singolo o una coppia di trainer e/o aggiungete una confezione regalo con replica di trainer per completare il vostro ordine.  Dimensioni approssimative: L 50 mm* H 29 mm* L 20 mm',
+    image: 'https://i.etsystatic.com/32957935/r/il/1b058d/4818236143/il_794xN.4818236143_121s.jpg',
+    price: 13.07,
+    sells: 3,
+    type: 'gadget',
+    published: true
+  },
+  {
+    _id: 21,
+    title: 'NIKE DUNK LOW QS LEBRON JAMES FRUITY PEBBLES',
+    description: 'Le sneakers sono vendute come oggetti da collezione e come tali e per garantirne l\'autenticità non è possibile effettuare resi e sostituzioni.',
+    image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/lebron_540x.jpg?v=1670694594',
+    price: 219,
+    sells: 1,
+    type: 'scarpe',
+    published: true
+  },
+  {
+    _id: 22,
+    title: 'TAPPETO SUP',
+    description: 'I tappetini NOT FOR RESALE sono stati progettati per adattarsi a tutte le stanze e collezioni. Realizzato con materiali di altissima qualità, peluche morbidissimo su cui stare. Il tuo tappetino resisterà all\'usura e rimarrà fresco. La caratteristica perfetta per sfoggiare le tue sneakers su Instagram!',
+    image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/WhatsApp_Image_2019-09-09_at_5.44.15_PM_1_copy_1800x1800_786a3479-5656-490e-9acf-59e07a278f6e_540x.jpg?v=1636239696',
+    price: 20.30,
+    sells: 3,
+    type: 'gadget',
+    published: true
+  },
+  {
+    _id: 23,
+    title: 'FELPA HOODIE DELTANOVE PRETTY GIRLS LIKE TRAP MUSIC (LIMITED EDITION)',
+    description: 'Felpa 100% Cotone 340gr (o policotone 65/35 per la versione invernale)\nVestibilità Boxy Fit (larga e corta)\nFelpa realizzata artigianalmente in Italia da artigiani italiani.\nNOTA BENE:  La tonalità del tessuto, la vestibilità, e la composizione dei materiali può variare a seconda delle produzioni, della disponibilità e delle stagioni.',
+    image: 'https://i.etsystatic.com/32957935/r/il/1b058d/4818236143/il_794xN.4818236143_121s.jpg',
+    price: 34.70,
+    sells: 2,
+    type: 'felpa',
+    published: true
+  },
+  {
+    _id: 24,
+    title: 'T-SHIRT DELTANOVE TRUE LOVE',
+    description: 'T-shirt 100% Cotone 190gr\nVestibilità Regular\nMADE IN ITALY',
+    image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/TSHIRTBIANCA_00aa90ac-9352-477a-806e-ca375415b8d4_540x.jpg?v=1665499840',
+    price: 23.60,
+    sells: 6,
+    type: 't-shirt',
+    published: true
+  },
+  {
+    _id: 25,
+    title: 'T-SHIRT NOTRE STAY CLEAN',
+    description: 'T-shirt 100% Cotone 190gr\nVestibilità Regular\nMADE IN ITALY',
+    image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/staycleanb_540x.jpg?v=1656348676',
+    price: 23.70,
+    sells: 3,
+    type: 't-shirt',
+    published: true
   }
 ]

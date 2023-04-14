@@ -12,6 +12,8 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { ResultComponent } from './components/products/result/result.component';
 import { LoggedInGuard } from './logged-in.guard';
 import { CartComponent } from './components/products/cart/cart.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { DeliveryTimeComponent } from './components/delivery-time/delivery-time.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'registrazione', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
   { path: 'profilo', component: ProfileComponent, canActivate: [LoggedInGuard]},
+  { path: 'contatti', component: ContactsComponent},
+  { path: 'tempi-di-consegna-e-costi', component: DeliveryTimeComponent},
   { path: '**', redirectTo: 'home'}
 ];
 

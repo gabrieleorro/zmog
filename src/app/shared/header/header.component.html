@@ -9,12 +9,12 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <fa-icon [icon]="home" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
+            <fa-icon [icon]="home" class="align-self-center nav-icon"></fa-icon>
             <a class="nav-link" aria-current="page" routerLink="home">Home</a>
           </li>
-          <fa-icon [icon]="prodotti" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
+            <fa-icon [icon]="prodotti" class="align-self-center nav-icon"></fa-icon>
             <a class="nav-link" routerLink="prodotti">Prodotti</a>
           </li>
         </ul>
@@ -22,12 +22,12 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <fa-icon [icon]="nuovoProdotto" class="align-self-center nav-icon"></fa-icon>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/prodotti/nuovo-prodotto">New Product</a>
+          <li class="nav-item" *ngIf="authService.isLogged() && user.role === 'admin'">
+            <fa-icon [icon]="nuovoProdotto" class="align-self-center nav-icon"></fa-icon>
+            <a class="nav-link" routerLink="/prodotti/nuovo-prodotto">Nuovo Prodotto</a>
           </li>
-          <fa-icon [icon]="carrello" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
+            <fa-icon [icon]="carrello" class="align-self-center nav-icon"></fa-icon>
             <a class="nav-link" routerLink="cart">({{numeroProdotti}}) Carrello</a>
           </li>
           <li class="nav-item user" *ngIf="!authService.isLogged()">
@@ -40,9 +40,9 @@
             <a class="nav-link" routerLink="profilo"> - Profilo</a>
             <a class="nav-link" (click)="logout()"> - Esci</a>
           </li>
-          <fa-icon [icon]="contatti" class="align-self-center nav-icon"></fa-icon>
           <li class="nav-item">
-            <a class="nav-link" routerLink="home">Contatti</a>
+            <fa-icon [icon]="contatti" class="align-self-center nav-icon"></fa-icon>
+            <a class="nav-link" routerLink="contatti">Contatti</a>
           </li>
           <li class="nav-item">
             <input type="search" class="campo-cerca" [(ngModel)]="ricerca" placeholder="Cerca..." (keyup.enter)="risultatoRicerca()" />

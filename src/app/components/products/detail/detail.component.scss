@@ -285,46 +285,4 @@
   }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 480px) {
-  .p-image-preview-container {
-    display: flex!important;
-    justify-content: center!important;
-    height: 400px;
-  }
-  .col-6 {
-    width: 100%!important;
-  }
-  .p-image-preview-indicator {
-    align-items: center;
-  }
-  img.ng-star-inserted {
-    height: 400px;
-    width: 400px;
-  }
-}
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .p-image-preview-container {
-    display: flex!important;
-    justify-content: center!important;
-    height: 400px;
-  }
-  .col-6 {
-    width: 100%;
-  }
-  img.ng-star-inserted {
-    height: 400px;
-    width: 400px;
-  }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .p-image-preview-container {
-    display: flex;
-    justify-content: center;
-    height: 400px;
-  }
-  .col-6 {
-    width: 100%;
-  }
-}
