@@ -87,3 +87,19 @@ p.contenuto {
   margin: 20px 0;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .customer-detail {
+    margin-left: 50px;
+  }
+  .customer-address {
+    margin-left: 50px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .customer-detail {
+    margin-left: 90px;
+  }
+  .customer-address {
+    margin-left: 90px;
+  }
+}

@@ -97,6 +97,9 @@ export class ProductCardComponent implements OnInit, OnDestroy {
           this.productService.findProducts(this.ricercato).subscribe({
             next: (res) => {
               this.products = res;
+              if(res.length < 4) {
+                this.prodottiPerPagina = res.length;
+              }
               this.prodottiTotali = res.length;
               if(res) {
                 this.messageService.add({severity: 'success', summary:'Completato', detail: 'Prodotti cercati correttamente.', life: 5000})
