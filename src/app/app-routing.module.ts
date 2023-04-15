@@ -12,8 +12,12 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { ResultComponent } from './components/products/result/result.component';
 import { LoggedInGuard } from './logged-in.guard';
 import { CartComponent } from './components/products/cart/cart.component';
-import { ContactsComponent } from './components/contacts/contacts.component';
-import { DeliveryTimeComponent } from './components/delivery-time/delivery-time.component';
+import { ContactsComponent } from './components/pages/contacts/contacts.component';
+import { DeliveryTimeComponent } from './components/pages/delivery-time/delivery-time.component';
+import { PagesComponent } from './components/pages/pages.component';
+import { UserComponent } from './components/user/user.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { ReturnsReplacementsComponent } from './components/pages/returns-replacements/returns-replacements.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -25,11 +29,17 @@ const routes: Routes = [
     { path: '', pathMatch: 'full', component: ProductsListComponent}
   ]},
   { path: 'cart', component: CartComponent },
-  { path: 'registrazione', component: RegistrationComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'profilo', component: ProfileComponent, canActivate: [LoggedInGuard]},
-  { path: 'contatti', component: ContactsComponent},
-  { path: 'tempi-di-consegna-e-costi', component: DeliveryTimeComponent},
+  { path: 'account', component: UserComponent, children: [
+    { path: 'registrazione', component: RegistrationComponent},
+    { path: 'login', component: LoginComponent},
+    { path: 'profilo', component: ProfileComponent, canActivate: [LoggedInGuard]},
+  ]},
+  { path: 'pages', children: [
+    { path: 'contatti', component: ContactsComponent},
+    { path: 'tempi-di-consegna-e-costi', component: DeliveryTimeComponent},
+    { path: 'resi-e-sostituzioni', component: ReturnsReplacementsComponent},
+    { path: '', pathMatch: 'full', component: NotFoundComponent},
+  ]},
   { path: '**', redirectTo: 'home'}
 ];
 

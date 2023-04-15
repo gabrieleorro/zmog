@@ -1,0 +1,40 @@
+.container.cf {
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 15%;
+  margin-bottom: 15%;
+
+  .page-header {
+
+    display: flex;
+    justify-content: center;
+
+    .majortitle {
+      font-family: 'NeueHaasDisplay';
+      font-size: 40px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+  }
+  .testo {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+
+    p {
+      color: #4e4e4e;
+
+      a {
+        color: #7b7d7e;
+        transition: color .1s,border-color .1s,opacity .1s;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+}

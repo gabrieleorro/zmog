@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/nera_43d9b52f-262d-442e-b94f-75bc0a4dfcfd_720x.jpg?v=1675784569',
     price: 23.60,
     sells: 3,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -38,7 +38,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/BIANCA_c3cc860c-4c84-4b9d-8a1c-c7f27274487e_720x.jpg?v=1675777968',
     price: 23.60,
     sells: 0,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/amournera_720x.jpg?v=1669223525',
     price: 23.60,
     sells: 6,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/amourbianca_6ce4b55c-d27e-450a-b55c-92ca462c546c_720x.jpg?v=1669223525',
     price: 23.60,
     sells: 0,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -68,7 +68,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/TSHIRTNERA_8c796250-3b12-4a67-9d77-da279ad71e1e_720x.jpg?v=1665499538',
     price: 23.60,
     sells: 4,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/TSHIRTBIANCA_1dcbec45-5f7e-4c82-a0ab-0dfb997e4699_720x.jpg?v=1665499538',
     price: 23.60,
     sells: 5,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -88,7 +88,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/tshirtnera_44964e7d-cf43-4f1e-986d-befe4d41b59c_720x.jpg?v=1665499486',
     price: 23.60,
     sells: 0,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -98,7 +98,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/tshirtBIANCA_e561a232-457d-4882-8d64-200591b8776a_720x.jpg?v=1665499487',
     price: 23.60,
     sells: 0,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {
@@ -148,7 +148,7 @@ export const PRODUCTS: Product[] = [
     image: 'https://cdn.shopify.com/s/files/1/0608/1806/3572/products/004_binaco_720x.jpg?v=1636239609',
     price: 23.60,
     sells: 0,
-    type: 'shirt',
+    type: 't-shirt',
     published: true
   },
   {

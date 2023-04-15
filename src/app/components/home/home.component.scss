@@ -167,3 +167,52 @@ div#container-utente {
   }
 }
 
+@media only screen and (min-width: 0px) and (max-width: 480px){
+  div#container-utente {
+    width: 110%;//
+    margin-left: -7%;//
+
+    div#dati-utente {
+
+      h2 {
+        font-size: 16px!important;
+      }
+
+      ul {
+        height: 75px;//
+        margin-top: 18px;
+        font-size: 13px;//
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px){
+  div#container-utente {
+    width: 110%;//
+    margin-left: -7%;//
+
+    div#dati-utente {
+
+      h2 {
+        font-size: 20px!important;
+      }
+
+      ul {
+        height: 75px;//
+        margin-top: 18px;
+        font-size: 17px;//
+        text-align: left;
+
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1023px){
+  div#container-utente {
+    width: 110%;//
+    margin-left: -7%;//
+  }
+}
