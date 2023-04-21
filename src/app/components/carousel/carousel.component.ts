@@ -26,7 +26,7 @@ export class CarouselComponent {
     },
     {
       id: 5,
-      label: '"FLY"'
+      label: '"WINGS"'
     },
     {
       id: 6,

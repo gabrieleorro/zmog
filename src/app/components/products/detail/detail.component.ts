@@ -63,6 +63,7 @@ export class DetailComponent implements OnInit {
       next: (res) => {
         this.loading = false;
         this.prodotto = res;
+        this.productService.prodottoCart.next(res);
       },
       error: (error) => {
         console.log(error);

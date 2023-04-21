@@ -19,3 +19,56 @@
     text-shadow: $nero 1px 3px 3px;
   }
 }
+
+// Media queries
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .carousel-caption {
+    top: 2rem;
+    h2 {
+      font-size: 6px!important;
+      margin-top: -15%;
+    }
+    h3 {
+      font-size: 10px;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .carousel-caption {
+    top: 3rem;
+    h2 {
+      font-size: 6px!important;
+      margin-top: -13%;
+    }
+    h3 {
+      font-size: 13px;
+    }
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .carousel-caption {
+    top: 3rem;
+    h2 {
+      font-size: 8px!important;
+      margin-top: -10%;
+    }
+    h3 {
+      font-size: 15px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .carousel-caption {
+    top: 9rem;
+    h2 {
+      font-size: 15px!important;
+      margin-top: -3%;
+    }
+    h3 {
+      font-size: 30px;
+    }
+  }
+}

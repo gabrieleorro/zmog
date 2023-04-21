@@ -38,3 +38,42 @@
     }
   }
 }
+
+@media only screen  and (min-width: 320px) and (max-width: 375px) {
+  .container.cf {
+    .page-header {
+      .majortitle {
+        font-size: 25px;
+      }
+    }
+    .testo {
+      font-size: 23px;
+    }
+  }
+}
+
+@media only screen  and (min-width: 375px) and (max-width: 425px) {
+  .container.cf {
+    .page-header {
+      .majortitle {
+        font-size: 25px;
+      }
+    }
+    .testo {
+      font-size: 23px;
+    }
+  }
+}
+
+@media only screen  and (min-width: 425px) and (max-width: 768px) {
+  .container.cf {
+    .page-header {
+      .majortitle {
+        font-size: 25px;
+      }
+    }
+    .testo {
+      font-size: 23px;
+    }
+  }
+}

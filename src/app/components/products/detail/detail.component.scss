@@ -285,4 +285,158 @@
   }
 }
 
+@media only screen  and (min-width: 320px) and (max-width: 375px) {
+  .prodotto-title {
+    margin-top: 0%;
+    h2 {
+      font-size: 20px !important;
+    }
+  }
+
+  .taglie{
+
+    .tasto {
+      width: 46px;
+      height: 40px;
+    }
+  }
+
+  .card-feedback {
+    width: 100%;
+    .testo-feedback {
+      font-size: 12px;
+    }
+  }
+
+  .prodotto-description {
+    font-size: 12px;
+  }
+}
+
+@media only screen  and (min-width: 375px) and (max-width: 425px) {
+  .prodotto-title {
+    margin-top: 0%;
+    h2 {
+      font-size: 17px !important;
+    }
+  }
+
+  .taglie{
+
+    .tasto {
+      width: 60px;
+      height: 51px;
+    }
+  }
+
+  .card-feedback {
+    width: 100%;
+    .testo-feedback {
+      font-size: 14px;
+    }
+  }
+
+  .prodotto-description {
+    font-size: 16px;
+  }
+}
+
+@media only screen  and (min-width: 425px) and (max-width: 768px) {
+  .prodotto-title {
+    margin-top: 0%;
+    h2 {
+      font-size: 20px !important;
+    }
+  }
+
+  .taglie{
+
+    .tasto {
+      width: 60px;
+      height: 51px;
+    }
+  }
+
+  .card-feedback {
+    width: 100%;
+    .testo-feedback {
+      font-size: 17px;
+    }
+  }
+
+  .prodotto-description {
+    font-size: 18px;
+  }
+}
+
+@media only screen  and (min-width: 768px) and (max-width: 1024px) {
+  .prodotto-title {
+    margin-top: 15%;
+    h2 {
+      font-size: 20px !important;
+    }
+  }
+
+  .taglie{
+
+    .tasto {
+      width: 60px;
+      height: 51px;
+    }
+  }
+
+  .card-feedback {
+    width: 100%;
+    .testo-feedback {
+      font-size: 15px;
+    }
+  }
+
+  .prodotto-description {
+    font-size: 18px;
+  }
+}
+
+@media only screen  and (min-width: 1024px) and (max-width: 1440px) {
+  .prodotto-title {
+    margin-top: 10%;
+    h2 {
+      font-size: 30px !important;
+    }
+  }
+
+  .prodotto-price {
+    font-size: 45px;
+  }
+
+  .testo-label {
+    font-size: 25px;
+  }
+
+  .taglie{
+
+    .tasto {
+      width: 80px;
+      height: 61px;
+    }
+  }
+
+  .selettore-quantita {
+    button {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .card-feedback {
+    width: 100%;
+    .testo-feedback {
+      font-size: 21px;
+    }
+  }
+
+  .prodotto-description {
+    font-size: 25px;
+  }
+}
 

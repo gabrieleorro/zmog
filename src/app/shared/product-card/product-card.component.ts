@@ -61,6 +61,9 @@ export class ProductCardComponent implements OnInit, OnDestroy {
           this.ricercaProdotti();
         } else {
           this.prodottiTotali = response.length;
+          if(response.length < 4) {
+            this.prodottiPerPagina = response.length;
+          }
           if(response) {
             this.messageService.add({severity: 'success', summary: 'Completato!', detail: 'Prodotto caricato correttamente!'});
           }
@@ -69,6 +72,11 @@ export class ProductCardComponent implements OnInit, OnDestroy {
             this.loading = false;
             this.products = response.filter(prodotto => prodotto.type === tipo);
             this.prodottiTotali = response.filter(prodotto => prodotto.type === tipo).length;
+            if(this.prodottiTotali < 4) {
+              this.prodottiPerPagina = this.prodottiTotali;
+            } else {
+              this.prodottiPerPagina = 4;
+            }
           } else {
             this.loading = false;
             this.products = response;

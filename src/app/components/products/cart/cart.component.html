@@ -20,7 +20,7 @@
         </div>
         <div class="prices">
           <div class="amount">{{product.quantita * product.price | currency: 'EUR'}}</div>
-          <div class="save"><u>Salva per dopo</u></div>
+          <!-- <div class="save"><u>Salva per dopo</u></div> -->
           <div class="remove"><u (click)="removeProduct(product)">Rimuovi</u></div>
         </div>
       </div>
@@ -34,9 +34,9 @@
       </div>
       <div class="total-amount">{{prezzoTotale | currency: 'EUR'}}</div>
       </div>
-      <div class="checkout-btn">
-        <button class="button" *ngIf="!loggato">Per proseguire è necessario effettuare l'<u routerLink="/login">accesso</u></button>
-      </div>
+      <!-- <div class="checkout-btn">
+        <button class="button" *ngIf="!loggato">Per proseguire è necessario effettuare l'<u routerLink="/account/login">accesso</u></button>
+      </div> -->
     </div>
     <div id="paypal-button-container"></div>
   </div>

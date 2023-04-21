@@ -207,7 +207,8 @@ h2#titolone {
   }
 }
 
-@media only screen  and (min-width: 320px) and (max-width: 480px) {
+// media queries
+@media only screen  and (min-width: 320px) and (max-width: 375px) {
   .container-fluid {
     height: 70vh;
 
@@ -224,16 +225,66 @@ h2#titolone {
         }
 
         .title {
-          line-height: 20px;
-          font-size: 20px;
+          line-height: 15px;
+          font-size: 12px;
           margin-left: 20px;
         }
         .subtitle {
           line-height: 0px;
-          font-size: 15px;
+          font-size: 11px;
         }
         .prices {
           margin-top: -25%;
+        }
+      }
+      .checkout {
+        width: 90%;
+        margin-bottom: 5%;
+
+        .total-amount {
+          font-size: 30px;
+        }
+        .checkout-btn {
+          .button {
+            height: 45px;
+            font-size: 16px;
+          }
+        }
+      }
+      div#paypal-button-container {
+        width: 34%;
+      }
+    }
+  }
+}
+
+@media only screen  and (min-width: 375px) and (max-width: 425px) {
+  .container-fluid {
+    height: 70vh;
+
+    .cart-container {
+      width: 90%;
+      max-height: 90%;
+      .Cart-Items {
+        display: inline-block;
+        .image-box {
+          .img-prod {
+            height: 130px;
+            width: 130px;
+          }
+        }
+
+        .title {
+          line-height: 17px;
+          font-size: 11px;
+          margin-left: 20px;
+        }
+        .subtitle {
+          line-height: 0px;
+          font-size: 12px;
+        }
+        .prices {
+          margin-top: -20%;
         }
       }
       .checkout {
@@ -255,7 +306,7 @@ h2#titolone {
   }
 }
 
-@media only screen  and (min-width: 481px) and (max-width: 768px) {
+@media only screen  and (min-width: 425px) and (max-width: 768px) {
   .container-fluid {
     height: 70vh;
 
@@ -263,29 +314,31 @@ h2#titolone {
       width: 95%;
       max-height: 90%;
       .Cart-Items {
-        display: flex;
+        display: inline-block;
         .image-box {
           .img-prod {
-            height: 110px;
-            width: 110px;
+            height: 150px;
+            width: 150px;
           }
         }
 
         .title {
-          line-height: 20px;
-          font-size: 20px;
+          line-height: 19px;
+          font-size: 16px;
           margin-left: 20px;
         }
         .subtitle {
           line-height: 0px;
-          font-size: 15px;
+          font-size: 14px;
         }
         .prices {
-          margin-top: 0%;
+          margin-top: -18%;
         }
       }
       .checkout {
         width: 90%;
+        margin-bottom: 5%;
+
         .total-amount {
           font-size: 30px;
         }
@@ -297,13 +350,13 @@ h2#titolone {
         }
       }
       div#paypal-button-container {
-        width: 13%;
+        width: 23%;
       }
     }
   }
 }
 
-@media only screen  and (min-width: 769px) and (max-width: 1024px) {
+@media only screen  and (min-width: 768px) and (max-width: 1024px) {
   .container-fluid {
     height: 70vh;
 
@@ -359,7 +412,7 @@ h2#titolone {
   }
 }
 
-@media only screen  and (min-width: 1025px) and (max-width: 1200px) {
+@media only screen  and (min-width: 1024px) and (max-width: 1200px) {
   .container-fluid {
     height: 70vh;
 

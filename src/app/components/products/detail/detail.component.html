@@ -97,8 +97,8 @@
         <hr class="not-in-quickbuy" *ngIf="prodotto.type != 'gadget'">
         <label class="testo-taglie" *ngIf="prodotto.type != 'gadget'">Guida alle taglie</label>
         <div class="image-taglie">
-          <img *ngIf="prodotto.type != 'felpa' && prodotto.type != 'gadget'" src="https://cdn.shopify.com/s/files/1/0608/1806/3572/files/Brown_Minimalist_Fashion_Size_Chart_Instagram_Post_800_x_566_px_480x480.jpg?v=1653385880">
-          <img *ngIf="prodotto.type == 'felpa'" src="https://cdn.shopify.com/s/files/1/0598/2355/4752/files/SIZE_CHART_HOODIE_Tavola_disegno_1_Tavola_disegno_1_480x480.jpg?v=1632748438">
+          <img class="shirt" *ngIf="prodotto.type != 'felpa' && prodotto.type != 'gadget'" src="https://cdn.shopify.com/s/files/1/0608/1806/3572/files/Brown_Minimalist_Fashion_Size_Chart_Instagram_Post_800_x_566_px_480x480.jpg?v=1653385880">
+          <img class="felpa" *ngIf="prodotto.type == 'felpa'" src="https://cdn.shopify.com/s/files/1/0598/2355/4752/files/SIZE_CHART_HOODIE_Tavola_disegno_1_Tavola_disegno_1_480x480.jpg?v=1632748438">
         </div>
       </div>
     </div>
