@@ -1,0 +1,273 @@
+@import "../../../../styles/colors.scss";
+
+.container-form {
+
+  input.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+  input.ng-valid.ng-touched {
+    border: 2px solid green;
+  }
+
+  .check {
+    height: 50px;
+    width: 100%!important;
+    flex-direction: column;
+
+    /* From uiverse.io by @Ali-Tahmazi99 */
+    button {
+      display: inline-block;
+      width: 150px;
+      height: 50px;
+      border-radius: 10px;
+      border: 1px solid #03045e;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease-in;
+      z-index: 1;
+    }
+
+    button::before,
+    button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 100%;
+      transform: skew(15deg);
+      transition: all 0.5s;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    button::before {
+      left: -10px;
+      background: #240046;
+    }
+
+    button::after {
+      right: -10px;
+      background: #5a189a;
+    }
+
+    button:hover::before,
+    button:hover::after {
+      width: 58%;
+    }
+
+    button:hover span {
+      color: #e0aaff;
+      transition: 0.3s;
+    }
+
+    button span {
+      color: #03045e;
+      font-size: 18px;
+      transition: all 0.3s ease-in;
+    }
+
+    p {
+      margin-top: 4px;
+      margin-left: 10px;
+    }
+
+  }
+
+  .errors {
+    height: 25px;
+    width: 100%;
+  }
+
+  .ripeti-pwd {
+    margin-left: 58px;
+  }
+}
+
+
+.btn-register {
+  background-color: $viola;
+  color: $bianco;
+  font-weight: 700;
+  border: 2px solid $viola;
+  width: 140px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 4%;
+}
+
+p.help.is-danger {
+  margin-top: 4px;
+  color: rgb(209, 30, 30);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'SF Mono Regular';
+  font-size: 30px;
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 3.5rem !important;
+}
+
+h6 {
+  font-family: "NeueHaasDisplay", sans-serif;
+  font-size: 18px;
+}
+
+label {
+  font-family: "NeueHaasDisplay", sans-serif;
+  font-size: 18px;
+}
+
+.box-gender {
+  width: 70%;
+}
+
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/27/22/05/necktie-1284463_960_720.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-indigo {
+  background-color: #000000;
+}
+
+
+
+@media (min-width: 992px) {
+  .card-registration-2 .bg-indigo {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .card-registration-2 .bg-indigo {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+.h-custom[_ngcontent-ldx-c29] {
+  height: 135vh !important;
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0px;
+  font-family: "NeueHaasDisplay", sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.lato-dx {
+  background-color: $nero;
+}
+
+.btn-close {
+  width: 4em;
+  opacity: 1.5;
+}
+
+.modal-footer {
+
+  .btn-modal {
+    background-color: $viola;
+    color: $bianco;
+    font-weight: 700;
+    border: 2px solid $nero;
+    margin-left: 0.5rem;
+  }
+}
+
+@media only screen  and (min-width: 320px) and (max-width: 375px) {
+
+  .container-form {
+    .card {
+      .card-body {
+        h3 {
+          font-size: 20px!important;
+        }
+
+        label {
+          font-size: 12px;
+        }
+
+        h6 {
+          font-size: 15px!important;
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen  and (min-width: 375px) and (max-width: 425px) {
+  .container-form {
+    .card {
+      .card-body {
+        h3 {
+          font-size: 25px!important;
+        }
+
+        label {
+          font-size: 14px;
+        }
+
+        h6 {
+          font-size: 15px!important;
+        }
+
+        .box-gender {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen  and (min-width: 425px) and (max-width: 768px) {
+  .container-form {
+    .card {
+      .card-body {
+        h3 {
+          font-size: 25px!important;
+        }
+
+        label {
+          font-size: 14px;
+        }
+
+        h6 {
+          font-size: 15px!important;
+        }
+
+        .box-gender {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

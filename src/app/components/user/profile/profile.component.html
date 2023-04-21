@@ -43,5 +43,23 @@
         </div>
       </div>
     </div>
+    <div class="bottoni-sotto">
+      <div class="button-modifica">
+        <a class="logout" (click)="open(modaleModifica)">Modifica profilo</a>
+      </div>
+    </div>
   </div>
 </div>
+
+<ng-template #modaleModifica let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title">Attenzione</h3>
+    <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <app-update-user [utente]="user" (chiudi)="modal.close()"></app-update-user>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-modal" (click)="modal.dismiss()">ANNULLA</button>
+  </div>
+</ng-template>

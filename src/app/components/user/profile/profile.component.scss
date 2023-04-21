@@ -34,6 +34,22 @@
   }
 }
 
+.bottoni-sotto {
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+
+  .button-modifica {
+    font-family: 'NeueHaasDisplay';
+    font-size: 20px;
+
+    .logout {
+      color: $viola;
+      cursor: pointer;
+    }
+  }
+}
+
 .customer-detail {
   margin-left: 150px;
 }

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { UserService } from 'src/app/services/user.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
 
   user: any;
   data: any;
@@ -20,6 +22,7 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private authService: AuthService,
     private router: Router,
+    private modal: NgbModal,
   ){}
 
   ngOnInit(): void {
@@ -43,6 +46,18 @@ export class ProfileComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  open(content: any, user?: any) {
+    this.modal.open(content, { ariaLabelledBy: 'modale modifica', size: 'lg', centered: true}).result.then((res) => {
+      this.onGetUser();
+    }).catch((err) => {
+      this.onClose();
+    });
+  }
+
+  onClose() {
+    this.router.navigate(['/account/profilo']);
   }
 
 }

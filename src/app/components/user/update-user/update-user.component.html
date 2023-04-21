@@ -1,0 +1,229 @@
+<div class="container-form">
+  <section class="gradient-custom-2">
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12">
+          <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+            <div class="card-body p-0">
+              <form #f="ngForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="p-5">
+                      <h3 class="fw-normal mb-5" style="color: #000000;">INFORMAZIONI GENERALI</h3>
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <label class="form-label" for="name">Nome*</label>
+                            <input placeholder="Nome" type="text" name="name" class="form-control form-control-lg" formControlName="name"/>
+                          </div>
+                          <div class="errors">
+                            <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">*Il campo nome è obbligatorio</p>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <label class="form-label" for="surname">Cognome*</label>
+                            <input placeholder="Cognome" type="text" name="surname" class="form-control form-control-lg" formControlName="surname"/>
+                          </div>
+                          <div class="errors">
+                            <p class="help is-danger" *ngIf="!form.get('surname').valid && form.get('surname').touched">*Il campo cognome è obbligatorio</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                          <div class="form-outline">
+                            <label class="form-label" for="birthDate">Data di nascita</label>
+                            <input placeholder="gg/MM/aaaa" type="date" name="birthDate" class="form-control form-control-lg" formControlName="birthDate"/>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                          <div class="form-outline">
+                            <label class="form-label" for="username">Username*</label>
+                            <input placeholder="Username" type="text" name="username" class="form-control form-control-lg" formControlName="username"/>
+                          </div>
+                          <div class="errors">
+                            <p class="help is-danger" *ngIf="!form.get('username').valid && form.get('username').touched">Il campo username è obbligatorio.</p>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                          <div class="form-outline">
+                            <label class="form-label" for="password">Password*</label>
+                            <p-password [toggleMask]="true" name="password" formControlName="password" strongRegex="^(?=.\d)(?=.[A-Z])(?=.[a-z])(?=.[^\w\d\s:])([^\s]){8,16}$">
+                              <ng-template pTemplate="header">
+                                <h6>Scegli una password</h6>
+                              </ng-template>
+                              <ng-template pTemplate="footer">
+                                <p-divider></p-divider>
+                                <p class="mt-2">Suggerimenti</p>
+                                <ul class="pl-2 ml-2 mt-0" style="line-height: 1">
+                                  <li>Almeno una minuscola</li>
+                                  <li>Almeno una maiuscola</li>
+                                  <li>Almeno un numero</li>
+                                  <li>Almeno un carattere speciale</li>
+                                  <li>8-16 caratteri</li>
+                                </ul>
+                              </ng-template>
+                            </p-password>
+                          </div>
+                          <div class="errors">
+                            <p class="help is-danger" *ngIf="form.controls['password'].hasError('required') && !form.get('password').dirty && form.get('password').touched">*Il campo password è obbligatorio</p>
+                            <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')">* La password deve almeno contenere 1 numero, 1 minuscola, 1 maiuscola, 1 carattere speciale e lunga da 8-16 caratteri.</p>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-5 mb-4 pb-2">
+                            <div class="form-outline form-white">
+                              <label class="form-label" for="cellPhone">Cellulare*</label>
+                              <input placeholder="+000 Cellulare" type="text" name="cellPhone" class="form-control form-control-lg" formControlName="cellPhone"/>
+                            </div>
+                            <div class="errors">
+                              <p class="help is-danger" *ngIf="!form.get('cellPhone').valid && form.get('cellPhone').touched">*Il cellulare è obbligatorio.</p>
+                              <p class="help is-danger" *ngIf="form.controls.cellPhone.hasError('pattern')">*Il numero di cellulare inserito non è valido.</p>
+                            </div>
+                          </div>
+
+                          <div class="col-md-7 mb-4 pb-2">
+                            <div class="form-outline form-white ripeti-pwd">
+                              <label class="form-label" for="ripetiPassword">Ripeti password*</label>
+                              <p-password [toggleMask]="true" [feedback]="false" name="ripetiPassword" formControlName="ripetiPassword"></p-password>
+                            </div>
+
+                            <p class="help is-danger" *ngIf="form.controls.ripetiPassword.hasError('required') && !form.get('ripetiPassword').dirty && form.get('ripetiPassword').touched">*Il campo ripeti password è obbligatorio</p>
+                            <p class="help is-danger" *ngIf="form.getError('diversa') && form.get('ripetiPassword').touched && form.get('ripetiPassword').dirty">* Le password devono combaciare.</p>
+
+                          </div>
+
+                          <div class="mb-4">
+                            <div class="form-outline form-white">
+                              <label class="form-label" for="email">Email*</label>
+                              <input placeholder="Email" type="text" name="email" class="form-control form-control-lg" formControlName="email"/>
+                            </div>
+                            <div class="errors">
+                              <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').dirty">*Il campo email è obbligatorio.</p>
+                              <p class="help is-danger" *ngIf="form.controls['email'].hasError('email')">*L'email non è valida.</p>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 mb-4 box-gender">
+                            <h6 class="mb-2 pb-1">Sesso: </h6>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                              value="Donna" checked formControlName="gender" />
+                              <label class="form-check-label" for="femaleGender">Donna</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                              value="Uomo" formControlName="gender"/>
+                              <label class="form-check-label" for="maleGender">Uomo</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="gender" id="otherGender"
+                              value="Altro" formControlName="gender"/>
+                              <label class="form-check-label" for="otherGender">Altro</label>
+                            </div>
+                            <div class="errors">
+                              <p class="help is-danger" *ngIf="form.controls['gender'].hasError('required') && form.get('gender').touched">Il campo deve essere valorizzato.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 bg-indigo text-white">
+                    <div class="p-5">
+                      <h3 class="fw-normal mb-5">INDIRIZZO PERSONALE</h3>
+
+                      <div class="mb-4 pb-2">
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="address">Indirizzo + Nr*</label>
+                          <input placeholder="Via/Piazza/Largo" type="text" name="address" class="form-control form-control-lg" formControlName="address"/>
+                        </div>
+                        <div class="errors">
+                          <p class="help is-danger" *ngIf="form.controls['address'].hasError('required') && form.get('address').touched">*L'indirizzo deve essere valorizzato.</p>
+                        </div>
+                      </div>
+
+                      <div class="mb-4 pb-2">
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="additionalInformation">Informazioni addizionali</label>
+                          <input placeholder="Informazioni addizionali" type="text" name="additionalInformation" class="form-control form-control-lg" formControlName="additionalInformation"/>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-5 mb-4 pb-2">
+
+                          <div class="form-outline form-white">
+                            <label class="form-label" for="cap">CAP*</label>
+                            <input placeholder="CAP" type="number" name="cap" class="form-control form-control-lg" formControlName="cap"/>
+                          </div>
+                          <div class="errors">
+                            <p class="help is-danger" *ngIf="form.controls['cap'].hasError('required') && form.get('cap').touched">*Il CAP deve essere valorizzato.</p>
+                          </div>
+
+                        </div>
+                        <div class="col-md-7 mb-4 pb-2">
+
+                          <div class="form-outline form-white">
+                            <label class="form-label" for="city">Città*</label>
+                            <input placeholder="Città" type="text" name="city" class="form-control form-control-lg" formControlName="city"/>
+                          </div>
+                          <div class="errors">
+                            <p class="help is-danger" *ngIf="form.controls['city'].hasError('required') && form.get('city').touched">*La città deve essere valorizzata.</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mb-4 pb-2">
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="country">Paese*</label>
+                          <input placeholder="Paese" type="text" name="country" class="form-control form-control-lg" formControlName="country"/>
+                        </div>
+                        <div class="errors">
+                          <p class="help is-danger" *ngIf="form.controls['country'].hasError('required') && form.get('country').touched">*Il paese deve essere valorizzato.</p>
+                        </div>
+                      </div>
+
+                      <div class="mb-4">
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="note">Note utente aggiuntive</label>
+                          <ckeditor style="color: black;" [editor]="Editor" [config]="editorConfig" class="note-utente" formControlName="note"></ckeditor>
+                          <!-- <input type="text" name="note" class="form-control form-control-lg" formControlName="note"/> -->
+                        </div>
+                      </div>
+
+                      <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                        <div class="check">
+                          <input class="form-check-input me-3" type="checkbox" name="terms" formControlName="terms"/>
+                          <label class="form-check-label text-white" for="terms">
+                            Dichiaro di accettare i <a class="text-white"><u>Terms and Conditions</u></a> del tuo sito.
+                          </label>
+                          <div class="errors">
+                            <p class="help is-danger" *ngIf="!form.get('terms').valid && form.get('terms').touched">Per proseguire è necessario accettare</p>
+                          </div>
+                          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button type="submit" class="btn btn-register btn-lg" (click)="modificaUtente(this.form.value)">Aggiorna</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

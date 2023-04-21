@@ -23,4 +23,8 @@ export class UserService {
     const usernameUtente = { 'username': username };
     return this.http.post<any>(`${this.apiBaseUrl}/user`, usernameUtente);
   }
+
+  updateUser(username: string, user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiBaseUrl}/${username}`, user);
+  }
 }
